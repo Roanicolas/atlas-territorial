@@ -1,0 +1,85 @@
+{
+  "_meta": {
+    "proyecto": "Atlas Territorial · datos oficiales por comuna",
+    "generado": "2026-07-04",
+    "reglas": "Sin datos inventados. Todo campo tiene fuente. Campos sin dato oficial verificado = null con nota en pendientes.",
+    "censo_fuente": "INE, Censo de Población y Vivienda 2024 (primeros resultados, 27-mar-2025). Tabla comunal transcrita por BioBioChile 28-03-2025: https://www.biobiochile.cl/noticias/servicios/toma-nota/2025/03/28/revisa-aqui-cuantas-personas-viven-en-tu-comuna-segun-el-censo-2024.shtml · Portal oficial: https://censo2024.ine.gob.cl/resultados/",
+    "servel_fuente": "Servel, Elecciones Municipales 26-27 oct 2024. Cifras al 99,99% de mesas escrutadas, PROVISORIAS sujetas a calificación del Tricel. Transcripciones: meganoticias.cl, pauta.cl, df.cl, encancha.cl (URLs por comuna abajo).",
+    "totales_contexto": {"chile_censado": 18480432, "rm_censado": 7400741, "fuente": "INE Censo 2024"}
+  },
+  "13108": {
+    "nombre": "Independencia",
+    "censo2024": {"poblacion": 116943, "hombres": 56916, "mujeres": 60027,
+      "nota": "CONFIRMA la cifra que el dossier tenía como 'no confirmada'. Actualizar módulo Demografía.",
+      "fuente": "INE Censo 2024 vía BBCL 28-03-2025"},
+    "servel2024": {"estado_dossier": "Ya levantado en dossier: Iglesias 45,09% · 25.846 de 57.319 válidos · 231 mesas · 8 locales · padrón ~79.400 (fuentes en módulos)"}
+  },
+  "13127": {
+    "nombre": "Recoleta",
+    "censo2024": {"poblacion": 154615, "hombres": 76020, "mujeres": 78595, "fuente": "INE Censo 2024 vía BBCL"},
+    "servel2024": {
+      "alcalde": "Fares Jadue", "partido": "PC", "pacto": "Contigo Chile Mejor",
+      "pct": 35.83, "votos_validos_comuna": 92413, "mesas_escrutadas": "99,99%",
+      "habilitados": 137855, "segundo": {"nombre": "Mauricio Smok", "partido": "UDI", "pct_prensa": 28.8},
+      "estado": "provisorio, sujeto a Tricel",
+      "fuentes": ["https://www.meganoticias.cl/nacional/463280-...-recoleta-...html (35,83% · 92.413 válidos)",
+                  "https://www.encancha.cl/.../renca... análogo Recoleta (137.855 habilitados)",
+                  "https://www.df.cl/... (Jadue 35,4% vs Smok 28,8% al 84% mesas)"]
+    }
+  },
+  "13104": {
+    "nombre": "Conchalí",
+    "censo2024": {"poblacion": 121587, "hombres": 59122, "mujeres": 62465, "fuente": "INE Censo 2024 vía BBCL"},
+    "servel2024": {
+      "alcalde": "René de la Vega", "partido": "IND", "pacto": null,
+      "pct": 34.34, "votos_validos_comuna": 79829, "mesas_escrutadas": "99,99%",
+      "habilitados": null, "segundo": null,
+      "estado": "provisorio, sujeto a Tricel",
+      "fuentes": ["https://www.meganoticias.cl/nacional/463239-...-conchali-...html (34,34% · 79.829 válidos)"]
+    }
+  },
+  "13101": {
+    "nombre": "Santiago",
+    "censo2024": {"poblacion": 438856, "hombres": 223237, "mujeres": 215619, "fuente": "INE Censo 2024 vía BBCL"},
+    "servel2024": {
+      "alcalde": "Mario Desbordes", "partido": "RN", "pacto": "Chile Vamos",
+      "pct": 51.08, "votos_validos_comuna": 216528, "mesas_escrutadas": "99,99%",
+      "habilitados": null, "segundo": {"nombre": "Irací Hassler", "partido": "PC", "pct_prensa": 28.4},
+      "estado": "provisorio, sujeto a Tricel",
+      "fuentes": ["https://www.meganoticias.cl/nacional/463484-...-santiago-...html (51,08% · 216.528 válidos)",
+                  "https://www.df.cl/... (Desbordes 51,1% vs Hassler 28,4%)"]
+    }
+  },
+  "13126": {
+    "nombre": "Quinta Normal",
+    "censo2024": {"poblacion": 129351, "hombres": 63130, "mujeres": 66221, "fuente": "INE Censo 2024 vía BBCL"},
+    "servel2024": {
+      "alcalde": "Karina Delfino", "partido": "PS", "pacto": "Contigo Chile Mejor",
+      "pct": 47.53, "votos_alcalde": 33544, "votos_validos_comuna": 70575, "mesas_escrutadas": "99,99%",
+      "habilitados": null, "segundo": null,
+      "estado": "provisorio, sujeto a Tricel",
+      "fuentes": ["https://www.meganoticias.cl/nacional/463274-...-quinta-normal-...html (47,53% · 70.575 válidos)",
+                  "https://www.pauta.cl/dato-en-pauta/2024/10/27/...quinta-normal.html (33.544 votos Delfino)"]
+    }
+  },
+  "13128": {
+    "nombre": "Renca",
+    "censo2024": {"poblacion": 143622, "hombres": 69985, "mujeres": 73637, "fuente": "INE Censo 2024 vía BBCL"},
+    "servel2024": {
+      "alcalde": "Claudio Castro", "partido": "IND", "pacto": "Fuera de pacto",
+      "pct": 75.72, "votos_alcalde": 66935, "votos_validos_comuna": 88400, "mesas_escrutadas": "99,99%",
+      "habilitados": 114321, "segundo": null,
+      "estado": "provisorio, sujeto a Tricel",
+      "fuentes": ["https://www.meganoticias.cl/nacional/463282-...-renca-...html (75,72% · 88.400 válidos)",
+                  "https://www.pauta.cl/dato-en-pauta/2024/10/27/...renca.html (66.935 votos Castro)",
+                  "https://www.encancha.cl/.../renca (114.321 habilitados)"]
+    }
+  },
+  "_pendientes": [
+    "Habilitados/padrón 2024 de Conchalí, Santiago y Quinta Normal → BCN Reportes Comunales (bcn.cl/siit/reportescomunales, sección Participación: mesas, inscritos, votantes) o elecciones.servel.cl",
+    "N° de mesas y locales de votación por comuna (equivalente al 231/8 de Independencia) → mismas fuentes BCN/Servel",
+    "% población nacida en el extranjero por comuna (Censo 2024) → INE indicadores comunales censo2024.ine.gob.cl/resultados o BCN Reportes (sección Censo 2024)",
+    "Concejales electos 2024 por comuna → Servel/Tricel",
+    "Validación Tricel de todos los resultados provisorios (sentencias de proclamación)"
+  ]
+}

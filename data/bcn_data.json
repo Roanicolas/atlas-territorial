@@ -1,0 +1,410 @@
+{
+ "13101": {
+  "superficie": "22.0 km2",
+  "alcalde_bcn": "Mario Desbordes Jiménez",
+  "concejales": "10",
+  "distrito": "Región Metropolitana de Santiago Provincia de Santiago Distrito 10 - 7° Circunscripción",
+  "censo": {
+   "p2017": "404.495",
+   "p2024": "438.856",
+   "var_pct": "8,5"
+  },
+  "extranjeros_censo": {
+   "censada": "438.856",
+   "nacidos_fuera": "176.956",
+   "pct": "40,3"
+  },
+  "sexo": {
+   "h2024": "223.237",
+   "m2024": "215.619",
+   "im2024": "103,5"
+  },
+  "indices": {
+   "idd2024": "26,2",
+   "iam2024": "63,6"
+  },
+  "pobreza_ingresos": {
+   "c2017": "4,1",
+   "c2022": "3,9"
+  },
+  "pobreza_multi": {
+   "c2017": "9,6",
+   "c2022": "16,5"
+  },
+  "rsh": {
+   "indigena_pct": "3,1",
+   "extranjeros_pct": "41,4"
+  },
+  "carencias": {
+   "serv_basicos_pct": "12,7",
+   "hacinados_pct": "6,6"
+  },
+  "sinim_ingresos_M": {
+   "a2022": "188.034.663",
+   "a2023": "201.975.940",
+   "a2024": "212.193.218"
+  },
+  "fcm_relacion_pct": {
+   "a2024": "276,4"
+  },
+  "cead_violentos": {
+   "t2022": "3.481,7",
+   "t2023": "3.597,5",
+   "t2024": "4.035,5"
+  },
+  "cead_vif": {
+   "t2024": "355,8"
+  },
+  "padron2024": {
+   "mesas": "965",
+   "inscritos": "378.363",
+   "votacion": "245.692",
+   "participacion_pct": "64,9"
+  },
+  "electores_extranjeros": {
+   "padron": "378.363",
+   "n": "120.666",
+   "pct": "31,9"
+  }
+ },
+ "13104": {
+  "superficie": "10.7 km2",
+  "alcalde_bcn": "René De La Vega Fuentes",
+  "concejales": "8",
+  "distrito": "Región Metropolitana de Santiago Provincia de Santiago Distrito 9 - 7° Circunscripción",
+  "censo": {
+   "p2017": "126.955",
+   "p2024": "121.587",
+   "var_pct": "-4,2"
+  },
+  "extranjeros_censo": {
+   "censada": "121.587",
+   "nacidos_fuera": "17.686",
+   "pct": "14,5"
+  },
+  "sexo": {
+   "h2024": "59.122",
+   "m2024": "62.465",
+   "im2024": "94,6"
+  },
+  "indices": {
+   "idd2024": "47,9",
+   "iam2024": "95,7"
+  },
+  "pobreza_ingresos": {
+   "c2017": "7,4",
+   "c2022": "6,1"
+  },
+  "pobreza_multi": {
+   "c2017": "29,4",
+   "c2022": "18,7"
+  },
+  "rsh": {
+   "indigena_pct": "5,4",
+   "extranjeros_pct": "12,7"
+  },
+  "carencias": {
+   "serv_basicos_pct": "8,5",
+   "hacinados_pct": "9,0"
+  },
+  "sinim_ingresos_M": {
+   "a2022": "44.593.194",
+   "a2023": "51.837.319",
+   "a2024": "55.773.594"
+  },
+  "fcm_relacion_pct": {
+   "a2024": "15,3"
+  },
+  "cead_violentos": {
+   "t2022": "2.542,6",
+   "t2023": "2.854,5",
+   "t2024": "2.667,7"
+  },
+  "cead_vif": {
+   "t2024": "523,1"
+  },
+  "padron2024": {
+   "mesas": "285",
+   "inscritos": "111.524",
+   "votacion": "93.252",
+   "participacion_pct": "83,6"
+  },
+  "electores_extranjeros": {
+   "padron": "111.524",
+   "n": "8.692",
+   "pct": "7,8"
+  }
+ },
+ "13108": {
+  "superficie": "7.0 km2",
+  "alcalde_bcn": "Agustín Iglesias Muñoz",
+  "concejales": "8",
+  "distrito": "Región Metropolitana de Santiago Provincia de Santiago Distrito 9 - 7° Circunscripción",
+  "censo": {
+   "p2017": "100.281",
+   "p2024": "116.943",
+   "var_pct": "16,6"
+  },
+  "extranjeros_censo": {
+   "censada": "116.943",
+   "nacidos_fuera": "51.908",
+   "pct": "44,4"
+  },
+  "sexo": {
+   "h2024": "56.916",
+   "m2024": "60.027",
+   "im2024": "94,8"
+  },
+  "indices": {
+   "idd2024": "39,8",
+   "iam2024": "62,7"
+  },
+  "pobreza_ingresos": {
+   "c2017": "8,5",
+   "c2022": "5,8"
+  },
+  "pobreza_multi": {
+   "c2017": "20,9",
+   "c2022": "22,4"
+  },
+  "rsh": {
+   "indigena_pct": "2,1",
+   "extranjeros_pct": "41,2"
+  },
+  "carencias": {
+   "serv_basicos_pct": "6,2",
+   "hacinados_pct": "9,6"
+  },
+  "sinim_ingresos_M": {
+   "a2022": "23.738.863",
+   "a2023": "27.940.024",
+   "a2024": "30.275.554"
+  },
+  "fcm_relacion_pct": {
+   "a2024": "19,7"
+  },
+  "cead_violentos": {
+   "t2022": "1.935,7",
+   "t2023": "2.106,1",
+   "t2024": "2.043,3"
+  },
+  "cead_vif": {
+   "t2024": "365,2"
+  },
+  "padron2024": {
+   "mesas": "231",
+   "inscritos": "90.972",
+   "votacion": "66.611",
+   "participacion_pct": "73,2"
+  },
+  "electores_extranjeros": {
+   "padron": "90.972",
+   "n": "29.647",
+   "pct": "32,6"
+  }
+ },
+ "13126": {
+  "superficie": "13.0 km2",
+  "alcalde_bcn": "Karina Delfino Mussa",
+  "concejales": "8",
+  "distrito": "Región Metropolitana de Santiago Provincia de Santiago Distrito 9 - 7° Circunscripción",
+  "censo": {
+   "p2017": "110.026",
+   "p2024": "129.351",
+   "var_pct": "17,6"
+  },
+  "extranjeros_censo": {
+   "censada": "129.351",
+   "nacidos_fuera": "35.630",
+   "pct": "27,5"
+  },
+  "sexo": {
+   "h2024": "63.130",
+   "m2024": "66.221",
+   "im2024": "95,3"
+  },
+  "indices": {
+   "idd2024": "43,5",
+   "iam2024": "77,7"
+  },
+  "pobreza_ingresos": {
+   "c2017": "3,7",
+   "c2022": "2,1"
+  },
+  "pobreza_multi": {
+   "c2017": "23,5",
+   "c2022": "19,7"
+  },
+  "rsh": {
+   "indigena_pct": "3,6",
+   "extranjeros_pct": "22,2"
+  },
+  "carencias": {
+   "serv_basicos_pct": "8,9",
+   "hacinados_pct": "8,6"
+  },
+  "sinim_ingresos_M": {
+   "a2022": "35.918.280",
+   "a2023": "43.805.915",
+   "a2024": "50.949.515"
+  },
+  "fcm_relacion_pct": {
+   "a2024": "22,9"
+  },
+  "cead_violentos": {
+   "t2022": "3.092,4",
+   "t2023": "3.664,1",
+   "t2024": "3.561,5"
+  },
+  "cead_vif": {
+   "t2024": "686,8"
+  },
+  "padron2024": {
+   "mesas": "261",
+   "inscritos": "102.586",
+   "votacion": "82.792",
+   "participacion_pct": "80,7"
+  },
+  "electores_extranjeros": {
+   "padron": "102.586",
+   "n": "14.255",
+   "pct": "13,9"
+  }
+ },
+ "13127": {
+  "superficie": "16.0 km2",
+  "alcalde_bcn": "Fares Jadue Leiva",
+  "concejales": "8",
+  "distrito": "Región Metropolitana de Santiago Provincia de Santiago Distrito 9 - 7° Circunscripción",
+  "censo": {
+   "p2017": "157.851",
+   "p2024": "154.615",
+   "var_pct": "-2,1"
+  },
+  "extranjeros_censo": {
+   "censada": "154.615",
+   "nacidos_fuera": "34.009",
+   "pct": "22,0"
+  },
+  "sexo": {
+   "h2024": "76.020",
+   "m2024": "78.595",
+   "im2024": "96,7"
+  },
+  "indices": {
+   "idd2024": "45,1",
+   "iam2024": "88,6"
+  },
+  "pobreza_ingresos": {
+   "c2017": "6,9",
+   "c2022": "5,1"
+  },
+  "pobreza_multi": {
+   "c2017": "22,5",
+   "c2022": "21,2"
+  },
+  "rsh": {
+   "indigena_pct": "4,8",
+   "extranjeros_pct": "20,6"
+  },
+  "carencias": {
+   "serv_basicos_pct": "10,5",
+   "hacinados_pct": "10,3"
+  },
+  "sinim_ingresos_M": {
+   "a2022": "38.741.446",
+   "a2023": "42.940.180",
+   "a2024": "45.517.650"
+  },
+  "fcm_relacion_pct": {
+   "a2024": "26,3"
+  },
+  "cead_violentos": {
+   "t2022": "3.310,2",
+   "t2023": "3.423,7",
+   "t2024": "3.439,6"
+  },
+  "cead_vif": {
+   "t2024": "377,9"
+  },
+  "padron2024": {
+   "mesas": "351",
+   "inscritos": "136.222",
+   "votacion": "110.359",
+   "participacion_pct": "81"
+  },
+  "electores_extranjeros": {
+   "padron": "136.222",
+   "n": "21.949",
+   "pct": "16,1"
+  }
+ },
+ "13128": {
+  "superficie": "24.0 km2",
+  "alcalde_bcn": "Claudio Castro Salas",
+  "concejales": "8",
+  "distrito": "Región Metropolitana de Santiago Provincia de Santiago Distrito 9 - 7° Circunscripción",
+  "censo": {
+   "p2017": "147.151",
+   "p2024": "143.622",
+   "var_pct": "-2,4"
+  },
+  "extranjeros_censo": {
+   "censada": "143.622",
+   "nacidos_fuera": "12.523",
+   "pct": "8,7"
+  },
+  "sexo": {
+   "h2024": "69.985",
+   "m2024": "73.637",
+   "im2024": "95"
+  },
+  "indices": {
+   "idd2024": "47,3",
+   "iam2024": "66,4"
+  },
+  "pobreza_ingresos": {
+   "c2017": "3,7",
+   "c2022": "5,3"
+  },
+  "pobreza_multi": {
+   "c2017": "24,5",
+   "c2022": "19,5"
+  },
+  "rsh": {
+   "indigena_pct": "9",
+   "extranjeros_pct": "6,9"
+  },
+  "carencias": {
+   "serv_basicos_pct": "7,8",
+   "hacinados_pct": "9,3"
+  },
+  "sinim_ingresos_M": {
+   "a2022": "61.155.365",
+   "a2023": "72.644.801",
+   "a2024": "82.713.160"
+  },
+  "fcm_relacion_pct": {
+   "a2024": "75,8"
+  },
+  "cead_violentos": {
+   "t2022": "2.410,8",
+   "t2023": "2.736,8",
+   "t2024": "2.593,5"
+  },
+  "cead_vif": {
+   "t2024": "441,4"
+  },
+  "padron2024": {
+   "mesas": "290",
+   "inscritos": "114.484",
+   "votacion": "99.321",
+   "participacion_pct": "86,8"
+  },
+  "electores_extranjeros": {
+   "padron": "114.484",
+   "n": "484",
+   "pct": "4,2"
+  }
+ }
+}

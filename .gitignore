@@ -1,0 +1,24 @@
+# Sistema
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Python (por si agregas el pipeline luego)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node (si agregas tooling)
+node_modules/
+package-lock.json
+
+# Builds locales / temporales
+build/
+dist/
+*.tmp
+*.bak
+
+# Datos locales del usuario final (localStorage no viaja pero por si)
+*.local.json

@@ -1,0 +1,3757 @@
+{
+ "13108": {
+  "name": "Independencia",
+  "proj": {
+   "minLon": -70.6819,
+   "maxLat": -33.3989,
+   "kx": 0.834699,
+   "scale": 24773.4139,
+   "pad": 70,
+   "W": 797.9,
+   "H": 960
+  },
+  "W": 797.9,
+  "H": 960,
+  "search": [
+   {
+    "cat": "PUNTO",
+    "q": "14 de la fama 14 de la fama · m04",
+    "text": "14 de la Fama",
+    "x": 481.5,
+    "y": 196.3,
+    "sec": "calles"
+   },
+   {
+    "cat": "PUNTO",
+    "q": "corredor huasco corredor huasco · m02",
+    "text": "Corredor Huasco",
+    "x": 470.4,
+    "y": 336.3,
+    "sec": "territorial"
+   },
+   {
+    "cat": "PUNTO",
+    "q": "demo · migración demografía · m12",
+    "text": "Demo · Migración",
+    "x": 460.8,
+    "y": 394.5,
+    "sec": "migracion"
+   },
+   {
+    "cat": "PUNTO",
+    "q": "áreas verdes · aromos áreas verdes · aromos · m09",
+    "text": "Áreas Verdes · Aromos",
+    "x": 522.9,
+    "y": 406.9,
+    "sec": "finanzas"
+   },
+   {
+    "cat": "PUNTO",
+    "q": "sector jar sector jar · m05",
+    "text": "Sector JAR",
+    "x": 348.1,
+    "y": 528.3,
+    "sec": "calles"
+   },
+   {
+    "cat": "PUNTO",
+    "q": "liceos · mesas liceos · mesas · m03",
+    "text": "Liceos · Mesas",
+    "x": 543.5,
+    "y": 543.2,
+    "sec": "territorial"
+   },
+   {
+    "cat": "PUNTO",
+    "q": "salud · campus norte salud · m06",
+    "text": "Salud · Campus norte",
+    "x": 660.6,
+    "y": 502.1,
+    "sec": "servicios"
+   },
+   {
+    "cat": "PUNTO",
+    "q": "daem · educación daem · educación · m11",
+    "text": "DAEM · Educación",
+    "x": 611.8,
+    "y": 518.4,
+    "sec": "finanzas"
+   },
+   {
+    "cat": "PUNTO",
+    "q": "cámaras · central seg. cámaras · m08",
+    "text": "Cámaras · Central Seg.",
+    "x": 584.9,
+    "y": 592.7,
+    "sec": "seguridad"
+   },
+   {
+    "cat": "PUNTO",
+    "q": "municipalidad municipalidad · m01",
+    "text": "Municipalidad",
+    "x": 622.0,
+    "y": 651.3,
+    "sec": "finanzas"
+   },
+   {
+    "cat": "PUNTO",
+    "q": "aseo · tresur/suat aseo · m10",
+    "text": "Aseo · Tresur/Suat",
+    "x": 522.9,
+    "y": 617.5,
+    "sec": "finanzas"
+   },
+   {
+    "cat": "PUNTO",
+    "q": "edif. inglaterra 1144 edif. inglaterra 1144 · m07",
+    "text": "Edif. Inglaterra 1144",
+    "x": 688.3,
+    "y": 716.6,
+    "sec": "seguridad"
+   },
+   {
+    "cat": "CALLE",
+    "q": "olivos",
+    "text": "Olivos",
+    "x": 665.2,
+    "y": 673.5,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "autopista central",
+    "text": "Autopista Central",
+    "x": 125.5,
+    "y": 434.3,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida independencia",
+    "text": "Avenida Independencia",
+    "x": 569.4,
+    "y": 460.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida hipódromo chile",
+    "text": "Avenida Hipódromo Chile",
+    "x": 436.6,
+    "y": 266.1,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida domingo santa maría",
+    "text": "Avenida Domingo Santa María",
+    "x": 506.5,
+    "y": 485.6,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "profesor alberto zañartu",
+    "text": "Profesor Alberto Zañartu",
+    "x": 635.2,
+    "y": 533.6,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "el guanaco",
+    "text": "El Guanaco",
+    "x": 591.9,
+    "y": 294.2,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "cotapos",
+    "text": "Cotapos",
+    "x": 555.1,
+    "y": 301.4,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "los nidos",
+    "text": "Los Nidos",
+    "x": 433.0,
+    "y": 366.3,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "escanilla",
+    "text": "Escanilla",
+    "x": 482.1,
+    "y": 483.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "josé bisquert",
+    "text": "José Bisquert",
+    "x": 315.8,
+    "y": 341.5,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "calle venecia",
+    "text": "Calle Venecia",
+    "x": 419.9,
+    "y": 288.5,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida reina maría",
+    "text": "Avenida Reina María",
+    "x": 202.0,
+    "y": 168.5,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "calle palermo",
+    "text": "Calle Palermo",
+    "x": 423.0,
+    "y": 307.2,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "alcalde germán domínguez",
+    "text": "Alcalde Germán Domínguez",
+    "x": 176.0,
+    "y": 537.4,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "carrión",
+    "text": "Carrión",
+    "x": 411.1,
+    "y": 579.7,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "coronel agustín lópez de alcázar",
+    "text": "Coronel Agustín López de Alcázar",
+    "x": 562.9,
+    "y": 696.7,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "teniente bisson",
+    "text": "Teniente Bisson",
+    "x": 457.5,
+    "y": 726.7,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "maruri",
+    "text": "Maruri",
+    "x": 601.5,
+    "y": 732.6,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "lastra",
+    "text": "Lastra",
+    "x": 605.9,
+    "y": 807.1,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "quintana",
+    "text": "Quintana",
+    "x": 540.1,
+    "y": 786.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "presidente aníbal pinto",
+    "text": "Presidente Aníbal Pinto",
+    "x": 575.6,
+    "y": 777.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "barnechea",
+    "text": "Barnechea",
+    "x": 566.4,
+    "y": 780.4,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "adolfo ibáñez",
+    "text": "Adolfo Ibáñez",
+    "x": 601.5,
+    "y": 791.4,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "picarte",
+    "text": "Picarte",
+    "x": 629.2,
+    "y": 793.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "nueva 1",
+    "text": "Nueva 1",
+    "x": 176.3,
+    "y": 331.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "las cañas",
+    "text": "Las Cañas",
+    "x": 244.9,
+    "y": 426.3,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "nueva 3",
+    "text": "Nueva 3",
+    "x": 165.5,
+    "y": 354.4,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "nueva 4",
+    "text": "Nueva 4",
+    "x": 192.0,
+    "y": 364.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "longitudinal 6",
+    "text": "Longitudinal 6",
+    "x": 260.6,
+    "y": 490.5,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "el molino",
+    "text": "El Molino",
+    "x": 408.2,
+    "y": 550.6,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "soberanía",
+    "text": "Soberanía",
+    "x": 353.8,
+    "y": 542.5,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "salomón sack",
+    "text": "Salomón Sack",
+    "x": 338.7,
+    "y": 603.1,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "la obra",
+    "text": "La Obra",
+    "x": 369.0,
+    "y": 584.4,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "grumete bustos",
+    "text": "Grumete Bustos",
+    "x": 463.2,
+    "y": 687.7,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "los ángeles",
+    "text": "Los Ángeles",
+    "x": 402.5,
+    "y": 728.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "baldomero flores",
+    "text": "Baldomero Flores",
+    "x": 437.9,
+    "y": 684.9,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "uno norte",
+    "text": "Uno Norte",
+    "x": 433.8,
+    "y": 704.4,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "comandante canales",
+    "text": "Comandante Canales",
+    "x": 438.7,
+    "y": 747.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "longitudinal",
+    "text": "Longitudinal",
+    "x": 370.5,
+    "y": 679.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "rivera",
+    "text": "Rivera",
+    "x": 566.4,
+    "y": 743.9,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "walter lihn kropp",
+    "text": "Walter Lihn Kropp",
+    "x": 412.4,
+    "y": 596.7,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "pantaleón vélez silva",
+    "text": "Pantaleón Vélez Silva",
+    "x": 528.8,
+    "y": 131.2,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "bombero adolfo ossa",
+    "text": "Bombero Adolfo Ossa",
+    "x": 464.4,
+    "y": 99.8,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "recabarren",
+    "text": "Recabarren",
+    "x": 451.4,
+    "y": 105.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "luis johnson",
+    "text": "Luis Johnson",
+    "x": 440.0,
+    "y": 101.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "rafaél ramírez",
+    "text": "Rafaél Ramírez",
+    "x": 415.0,
+    "y": 101.5,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "huidobro",
+    "text": "Huidobro",
+    "x": 417.4,
+    "y": 87.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "primavera",
+    "text": "Primavera",
+    "x": 250.0,
+    "y": 110.8,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "david arellano",
+    "text": "David Arellano",
+    "x": 336.9,
+    "y": 116.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "las estrellas",
+    "text": "Las Estrellas",
+    "x": 225.8,
+    "y": 141.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "las araucarias",
+    "text": "Las Araucarias",
+    "x": 212.7,
+    "y": 196.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "josé berstein",
+    "text": "José Berstein",
+    "x": 193.2,
+    "y": 182.8,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "costa rica",
+    "text": "Costa Rica",
+    "x": 185.6,
+    "y": 192.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "coronel alvarado",
+    "text": "Coronel Alvarado",
+    "x": 289.0,
+    "y": 207.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "bajos de jiménez",
+    "text": "Bajos de Jiménez",
+    "x": 123.9,
+    "y": 216.3,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "aurora de chile",
+    "text": "Aurora de Chile",
+    "x": 192.1,
+    "y": 425.8,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "santiago arcos",
+    "text": "Santiago Arcos",
+    "x": 290.0,
+    "y": 455.3,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "juliet",
+    "text": "Juliet",
+    "x": 358.9,
+    "y": 383.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "nueva de matte",
+    "text": "Nueva de Matte",
+    "x": 290.5,
+    "y": 315.2,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "obispo carlos san martín",
+    "text": "Obispo Carlos San Martín",
+    "x": 281.2,
+    "y": 354.1,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "alfredo guillermo bravo",
+    "text": "Alfredo Guillermo Bravo",
+    "x": 323.1,
+    "y": 438.7,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "bruselas",
+    "text": "Bruselas",
+    "x": 289.2,
+    "y": 411.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "capitán bignon",
+    "text": "Capitán Bignon",
+    "x": 396.5,
+    "y": 442.7,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida chillán",
+    "text": "Avenida Chillán",
+    "x": 307.5,
+    "y": 293.2,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "grumete pantaleón cortes",
+    "text": "Grumete Pantaleón Cortes",
+    "x": 246.3,
+    "y": 316.5,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "rosa salas",
+    "text": "Rosa Salas",
+    "x": 193.5,
+    "y": 254.5,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "carlos toribio robinet",
+    "text": "Carlos Toribio Robinet",
+    "x": 262.0,
+    "y": 342.7,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "marino de lobera",
+    "text": "Marino de Lobera",
+    "x": 233.9,
+    "y": 307.6,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida altamirano",
+    "text": "Avenida Altamirano",
+    "x": 314.3,
+    "y": 271.1,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "las enredaderas",
+    "text": "Las Enredaderas",
+    "x": 307.4,
+    "y": 250.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "los marroquíes",
+    "text": "Los Marroquíes",
+    "x": 318.0,
+    "y": 264.8,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "isidoro errázuriz",
+    "text": "Isidoro Errázuriz",
+    "x": 295.5,
+    "y": 233.1,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "autopista costanera norte",
+    "text": "Autopista Costanera Norte",
+    "x": 683.1,
+    "y": 889.4,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida la paz",
+    "text": "Avenida La Paz",
+    "x": 716.8,
+    "y": 547.8,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "san josé",
+    "text": "San José",
+    "x": 673.6,
+    "y": 485.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "general prieto",
+    "text": "General Prieto",
+    "x": 569.7,
+    "y": 830.2,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida jorge hirmas",
+    "text": "Avenida Jorge Hirmas",
+    "x": 177.1,
+    "y": 596.1,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "artesanos",
+    "text": "Artesanos",
+    "x": 703.7,
+    "y": 872.9,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida fermín vivaceta",
+    "text": "Avenida Fermín Vivaceta",
+    "x": 319.4,
+    "y": 180.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "santa laura",
+    "text": "Santa Laura",
+    "x": 538.1,
+    "y": 238.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "gamero",
+    "text": "Gamero",
+    "x": 274.2,
+    "y": 643.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "15 norte",
+    "text": "15 Norte",
+    "x": 258.5,
+    "y": 508.2,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "14 norte",
+    "text": "14 Norte",
+    "x": 219.0,
+    "y": 578.1,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "13 norte",
+    "text": "13 Norte",
+    "x": 227.6,
+    "y": 584.7,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "longitudinal 5",
+    "text": "Longitudinal 5",
+    "x": 252.6,
+    "y": 508.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "longitudinal 4",
+    "text": "Longitudinal 4",
+    "x": 240.3,
+    "y": 524.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "longitudinal 3",
+    "text": "Longitudinal 3",
+    "x": 212.3,
+    "y": 561.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "enrique soro",
+    "text": "Enrique Soro",
+    "x": 253.4,
+    "y": 577.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "echeverría",
+    "text": "Echeverría",
+    "x": 683.7,
+    "y": 718.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "bravo de saravia",
+    "text": "Bravo de Saravia",
+    "x": 131.7,
+    "y": 263.5,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "nueva 5",
+    "text": "Nueva 5",
+    "x": 205.6,
+    "y": 385.6,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "colón",
+    "text": "Colón",
+    "x": 569.5,
+    "y": 652.3,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "tres norte",
+    "text": "Tres Norte",
+    "x": 394.7,
+    "y": 730.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "cuatro norte",
+    "text": "Cuatro Norte",
+    "x": 380.9,
+    "y": 735.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "18 norte",
+    "text": "18 Norte",
+    "x": 186.0,
+    "y": 548.3,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "17 norte",
+    "text": "17 Norte",
+    "x": 194.1,
+    "y": 556.5,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "16 norte",
+    "text": "16 Norte",
+    "x": 202.2,
+    "y": 564.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "belisario prats",
+    "text": "Belisario Prats",
+    "x": 638.6,
+    "y": 395.5,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "cronista gongora",
+    "text": "Cronista Gongora",
+    "x": 350.5,
+    "y": 361.6,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "izquierdo",
+    "text": "Izquierdo",
+    "x": 314.2,
+    "y": 349.2,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "blanco fombona",
+    "text": "Blanco Fombona",
+    "x": 377.3,
+    "y": 458.5,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "padre las casas",
+    "text": "Padre Las Casas",
+    "x": 290.6,
+    "y": 430.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "moisés ríos",
+    "text": "Moisés Ríos",
+    "x": 180.4,
+    "y": 470.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "huánuco",
+    "text": "Huánuco",
+    "x": 518.6,
+    "y": 206.4,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "carlos medina",
+    "text": "Carlos Medina",
+    "x": 338.0,
+    "y": 702.9,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "sara gajardo",
+    "text": "Sara Gajardo",
+    "x": 301.5,
+    "y": 616.2,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "cruz",
+    "text": "Cruz",
+    "x": 580.5,
+    "y": 705.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "dos norte",
+    "text": "Dos Norte",
+    "x": 416.4,
+    "y": 697.4,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "bezanilla",
+    "text": "Bezanilla",
+    "x": 538.2,
+    "y": 535.9,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "francia",
+    "text": "Francia",
+    "x": 471.6,
+    "y": 381.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "cinco norte",
+    "text": "Cinco Norte",
+    "x": 354.8,
+    "y": 682.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "calle sevilla",
+    "text": "Calle Sevilla",
+    "x": 478.6,
+    "y": 464.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida central",
+    "text": "Avenida Central",
+    "x": 486.6,
+    "y": 436.2,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "freirina",
+    "text": "Freirina",
+    "x": 435.5,
+    "y": 295.3,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "calle río jachal",
+    "text": "Calle Río Jachal",
+    "x": 457.7,
+    "y": 417.5,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "huasco",
+    "text": "Huasco",
+    "x": 470.9,
+    "y": 316.8,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "antonio jacobo vial",
+    "text": "Antonio Jacobo Vial",
+    "x": 471.6,
+    "y": 448.7,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida inglaterra",
+    "text": "Avenida Inglaterra",
+    "x": 477.6,
+    "y": 400.7,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "lafayette",
+    "text": "Lafayette",
+    "x": 656.5,
+    "y": 327.3,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "general saavedra",
+    "text": "General Saavedra",
+    "x": 560.8,
+    "y": 324.6,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "enrico fermi",
+    "text": "Enrico Fermi",
+    "x": 623.8,
+    "y": 295.4,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "marcos macuada",
+    "text": "Marcos Macuada",
+    "x": 313.3,
+    "y": 100.8,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "doctor carlos lorca tobar",
+    "text": "Doctor Carlos Lorca Tobar",
+    "x": 668.3,
+    "y": 618.3,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "tacora",
+    "text": "Tacora",
+    "x": 221.6,
+    "y": 132.1,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida presidente eduardo frei montalva",
+    "text": "Avenida Presidente Eduardo Frei Montalva",
+    "x": 282.0,
+    "y": 717.9,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "andrés bello",
+    "text": "Andrés Bello",
+    "x": 402.8,
+    "y": 518.6,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "padre faustino gazzero",
+    "text": "Padre Faustino Gazzero",
+    "x": 323.0,
+    "y": 400.2,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "el roble",
+    "text": "El Roble",
+    "x": 532.9,
+    "y": 147.0,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida einstein",
+    "text": "Avenida Einstein",
+    "x": 537.0,
+    "y": 170.3,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "pablo urzúa",
+    "text": "Pablo Urzúa",
+    "x": 463.6,
+    "y": 129.7,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "san luis",
+    "text": "San Luis",
+    "x": 513.9,
+    "y": 509.4,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "pasaje independencia",
+    "text": "Pasaje Independencia",
+    "x": 440.8,
+    "y": 186.9,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "general bulnes",
+    "text": "General Bulnes",
+    "x": 293.2,
+    "y": 729.6,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "dávila baeza",
+    "text": "Dávila Baeza",
+    "x": 671.6,
+    "y": 758.1,
+    "z": 2.6
+   },
+   {
+    "cat": "CALLE",
+    "q": "general borgoño",
+    "text": "General Borgoño",
+    "x": 641.9,
+    "y": 856.6,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida barón de juras reales",
+    "text": "Avenida Barón de Juras Reales",
+    "x": 191.0,
+    "y": 148.6,
+    "z": 2.2
+   }
+  ],
+  "kpi": "<div class=\"tk\"><b>231</b><span>mesas</span></div><div class=\"tk\"><b>90.972</b><span>padrón</span></div><div class=\"tk\"><b>73,2%</b><span>particip.</span></div>",
+  "chipSub": "Censo 116.943 · Padrón 90.972 · Iglesias 45,1%",
+  "hasBldg": true,
+  "hasDossier": true
+ },
+ "13127": {
+  "name": "Recoleta",
+  "W": 698.9,
+  "H": 960.0,
+  "proj": {
+   "minLon": -70.658269,
+   "maxLat": -33.376409,
+   "kx": 0.83479,
+   "scale": 13830.6288,
+   "pad": 70,
+   "W": 698.9,
+   "H": 960.0
+  },
+  "search": [
+   {
+    "cat": "CALLE",
+    "q": "loreto",
+    "text": "Loreto",
+    "x": 265.5,
+    "y": 794.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "purísima",
+    "text": "Purísima",
+    "x": 298.3,
+    "y": 840.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida perú",
+    "text": "Avenida Perú",
+    "x": 274.2,
+    "y": 683.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida arzobispo valdivieso",
+    "text": "Avenida Arzobispo Valdivieso",
+    "x": 361.3,
+    "y": 555.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida las torres",
+    "text": "Avenida Las Torres",
+    "x": 382.6,
+    "y": 465.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "la unión",
+    "text": "La Unión",
+    "x": 209.5,
+    "y": 629.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida méxico",
+    "text": "Avenida México",
+    "x": 292.2,
+    "y": 507.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida einstein",
+    "text": "Avenida Einstein",
+    "x": 169.9,
+    "y": 458.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida recoleta",
+    "text": "Avenida Recoleta",
+    "x": 209.0,
+    "y": 767.6,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "juárez larga",
+    "text": "Juárez Larga",
+    "x": 187.0,
+    "y": 750.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "el salto chico",
+    "text": "El Salto Chico",
+    "x": 255.4,
+    "y": 618.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "lircay",
+    "text": "Lircay",
+    "x": 314.7,
+    "y": 473.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida dorsal",
+    "text": "Avenida Dorsal",
+    "x": 207.2,
+    "y": 341.2,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "ortiz de rozas",
+    "text": "Ortiz de Rozas",
+    "x": 294.2,
+    "y": 325.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "maría del pilar",
+    "text": "María del Pilar",
+    "x": 316.6,
+    "y": 353.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "emiliano zapata",
+    "text": "Emiliano Zapata",
+    "x": 210.1,
+    "y": 380.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "muñoz gamero",
+    "text": "Muñoz Gamero",
+    "x": 282.9,
+    "y": 413.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "josé miguel carrera",
+    "text": "José Miguel Carrera",
+    "x": 166.8,
+    "y": 288.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "adela martínez",
+    "text": "Adela Martínez",
+    "x": 305.0,
+    "y": 227.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "alfredo rosende",
+    "text": "Alfredo Rosende",
+    "x": 189.4,
+    "y": 199.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida diego silva henríquez",
+    "text": "Avenida Diego Silva Henríquez",
+    "x": 35.8,
+    "y": 175.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "túnel san cristóbal",
+    "text": "Túnel San Cristóbal",
+    "x": 580.1,
+    "y": 493.1,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida principal capitán ignacio carrera pinto",
+    "text": "Avenida Principal Capitán Ignacio Carrera Pinto",
+    "x": 193.9,
+    "y": 134.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "artesanos",
+    "text": "Artesanos",
+    "x": 150.3,
+    "y": 828.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida el salto",
+    "text": "Avenida El Salto",
+    "x": 316.0,
+    "y": 551.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "dominica",
+    "text": "Dominica",
+    "x": 238.6,
+    "y": 754.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "autopista vespucio norte",
+    "text": "Autopista Vespucio Norte",
+    "x": 255.7,
+    "y": 148.4,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "santos dumont",
+    "text": "Santos Dumont",
+    "x": 190.8,
+    "y": 695.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "juan cristóbal",
+    "text": "Juan Cristóbal",
+    "x": 170.7,
+    "y": 159.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "corredor transantiago dorsal",
+    "text": "Corredor Transantiago Dorsal",
+    "x": 97.4,
+    "y": 336.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "calle g",
+    "text": "Calle G",
+    "x": 129.8,
+    "y": 98.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "urmeneta",
+    "text": "Urmeneta",
+    "x": 206.2,
+    "y": 312.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida los zapadores",
+    "text": "Avenida Los Zapadores",
+    "x": 324.9,
+    "y": 289.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "pío nono",
+    "text": "Pío Nono",
+    "x": 327.1,
+    "y": 842.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "bellavista",
+    "text": "Bellavista",
+    "x": 221.6,
+    "y": 850.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida diagonal cardenal josé maría caro",
+    "text": "Avenida Diagonal Cardenal José María Caro",
+    "x": 176.3,
+    "y": 379.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida américo vespucio",
+    "text": "Avenida Américo Vespucio",
+    "x": 413.2,
+    "y": 290.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "las torres",
+    "text": "Las Torres",
+    "x": 439.6,
+    "y": 328.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "autopista vespucio oriente",
+    "text": "Autopista Vespucio Oriente",
+    "x": 478.5,
+    "y": 327.4,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "olivos",
+    "text": "Olivos",
+    "x": 184.1,
+    "y": 730.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida santos dumont",
+    "text": "Avenida Santos Dumont",
+    "x": 251.0,
+    "y": 706.2,
+    "z": 2.4
+   },
+   {
+    "cat": "PUNTO",
+    "q": "municipalidad recoleta",
+    "text": "Municipalidad de Recoleta",
+    "x": 240.5,
+    "y": 422.8
+   }
+  ],
+  "kpi": "<div class=\"tk\"><b>351</b><span>mesas</span></div><div class=\"tk\"><b>136.222</b><span>padrón</span></div><div class=\"tk\"><b>81%</b><span>particip.</span></div>",
+  "chipSub": "Censo 154.615 · Padrón 136.222 · Jadue (PC) 35,8%",
+  "hasBldg": false,
+  "hasDossier": false
+ },
+ "13104": {
+  "name": "Conchalí",
+  "W": 941.8,
+  "H": 960.0,
+  "proj": {
+   "minLon": -70.7002603,
+   "maxLat": -33.3658997,
+   "kx": 0.834997,
+   "scale": 22094.2075,
+   "pad": 70,
+   "W": 941.8,
+   "H": 960.0
+  },
+  "search": [
+   {
+    "cat": "CALLE",
+    "q": "avenida américo vespucio",
+    "text": "Avenida Américo Vespucio",
+    "x": 547.5,
+    "y": 161.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "general sandino",
+    "text": "General Sandino",
+    "x": 722.8,
+    "y": 492.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida diagonal cardenal josé maría caro",
+    "text": "Avenida Diagonal Cardenal José María Caro",
+    "x": 545.0,
+    "y": 321.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida presidente eduardo frei montalva",
+    "text": "Avenida Presidente Eduardo Frei Montalva",
+    "x": 234.9,
+    "y": 459.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "isabel carrera",
+    "text": "Isabel Carrera",
+    "x": 516.4,
+    "y": 236.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "tupungato",
+    "text": "Tupungato",
+    "x": 463.3,
+    "y": 436.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida diego silva henríquez",
+    "text": "Avenida Diego Silva Henríquez",
+    "x": 790.0,
+    "y": 471.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "julio montt salamanca",
+    "text": "Julio Montt Salamanca",
+    "x": 235.5,
+    "y": 198.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida el cortijo",
+    "text": "Avenida El Cortijo",
+    "x": 311.4,
+    "y": 346.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida la palmilla",
+    "text": "Avenida La Palmilla",
+    "x": 647.1,
+    "y": 585.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "teniente ponce",
+    "text": "Teniente Ponce",
+    "x": 596.9,
+    "y": 665.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "san fernando",
+    "text": "San Fernando",
+    "x": 712.5,
+    "y": 666.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "alberto gonzález barahona",
+    "text": "Alberto González Barahona",
+    "x": 679.9,
+    "y": 494.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "perpignan",
+    "text": "Perpignan",
+    "x": 618.2,
+    "y": 523.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "el olivo",
+    "text": "El Olivo",
+    "x": 362.2,
+    "y": 701.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "quilicura",
+    "text": "Quilicura",
+    "x": 342.0,
+    "y": 433.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "horacio johnson",
+    "text": "Horacio Johnson",
+    "x": 640.2,
+    "y": 265.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida fermín vivaceta",
+    "text": "Avenida Fermín Vivaceta",
+    "x": 524.5,
+    "y": 719.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "autopista vespucio norte",
+    "text": "Autopista Vespucio Norte",
+    "x": 879.0,
+    "y": 307.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "santa inés",
+    "text": "Santa Inés",
+    "x": 503.9,
+    "y": 755.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida los zapadores",
+    "text": "Avenida Los Zapadores",
+    "x": 831.7,
+    "y": 527.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "autopista central",
+    "text": "Autopista Central",
+    "x": 267.6,
+    "y": 598.9,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "corredor transantiago dorsal",
+    "text": "Corredor Transantiago Dorsal",
+    "x": 888.5,
+    "y": 727.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "roma",
+    "text": "Roma",
+    "x": 528.7,
+    "y": 821.4,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida la coruña",
+    "text": "Avenida La Coruña",
+    "x": 430.4,
+    "y": 315.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "carlos salas herrera",
+    "text": "Carlos Salas Herrera",
+    "x": 405.8,
+    "y": 810.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida barón de juras reales",
+    "text": "Avenida Barón de Juras Reales",
+    "x": 297.5,
+    "y": 435.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "calle g",
+    "text": "Calle G",
+    "x": 940.3,
+    "y": 348.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "huechuraba",
+    "text": "Huechuraba",
+    "x": 351.8,
+    "y": 123.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida general gambino",
+    "text": "Avenida General Gambino",
+    "x": 788.8,
+    "y": 329.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida pedro fontova",
+    "text": "Avenida Pedro Fontova",
+    "x": 618.4,
+    "y": 600.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida el guanaco",
+    "text": "Avenida El Guanaco",
+    "x": 854.0,
+    "y": 709.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "la palma",
+    "text": "La Palma",
+    "x": 627.3,
+    "y": 717.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida independencia",
+    "text": "Avenida Independencia",
+    "x": 370.1,
+    "y": 322.4,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida dorsal",
+    "text": "Avenida Dorsal",
+    "x": 710.7,
+    "y": 755.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida principal capitán ignacio carrera pinto",
+    "text": "Avenida Principal Capitán Ignacio Carrera Pinto",
+    "x": 747.2,
+    "y": 378.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "bajos de jiménez",
+    "text": "Bajos de Jiménez",
+    "x": 415.4,
+    "y": 854.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida granada",
+    "text": "Avenida Granada",
+    "x": 332.8,
+    "y": 180.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "los acacios",
+    "text": "Los Acacios",
+    "x": 262.2,
+    "y": 299.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "cauquenes",
+    "text": "Cauquenes",
+    "x": 824.8,
+    "y": 358.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "urmeneta",
+    "text": "Urmeneta",
+    "x": 839.1,
+    "y": 678.6,
+    "z": 2.4
+   },
+   {
+    "cat": "PUNTO",
+    "q": "municipalidad conchalí",
+    "text": "Municipalidad de Conchalí",
+    "x": 627.8,
+    "y": 790.1
+   }
+  ],
+  "kpi": "<div class=\"tk\"><b>285</b><span>mesas</span></div><div class=\"tk\"><b>111.524</b><span>padrón</span></div><div class=\"tk\"><b>83,6%</b><span>particip.</span></div>",
+  "chipSub": "Censo 121.587 · Padrón 111.524 · De la Vega (IND) 34,3%",
+  "hasBldg": false,
+  "hasDossier": false
+ },
+ "13101": {
+  "name": "Santiago",
+  "W": 960.0,
+  "H": 916.5,
+  "proj": {
+   "minLon": -70.6920527,
+   "maxLat": -33.425591,
+   "kx": 0.834347,
+   "scale": 14656.384,
+   "pad": 70,
+   "W": 960.0,
+   "H": 916.5
+  },
+  "search": [
+   {
+    "cat": "CALLE",
+    "q": "teatinos",
+    "text": "Teatinos",
+    "x": 514.8,
+    "y": 232.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "miraflores",
+    "text": "Miraflores",
+    "x": 637.3,
+    "y": 250.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "ismael valdés vergara",
+    "text": "Ismael Valdés Vergara",
+    "x": 650.3,
+    "y": 214.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "morandé",
+    "text": "Morandé",
+    "x": 530.0,
+    "y": 200.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "diagonal paraguay",
+    "text": "Diagonal Paraguay",
+    "x": 712.6,
+    "y": 328.8,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida santa isabel",
+    "text": "Avenida Santa Isabel",
+    "x": 693.8,
+    "y": 423.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "dieciocho",
+    "text": "Dieciocho",
+    "x": 496.0,
+    "y": 452.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida presidente balmaceda",
+    "text": "Avenida Presidente Balmaceda",
+    "x": 372.4,
+    "y": 131.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida beaucheff",
+    "text": "Avenida Beaucheff",
+    "x": 417.1,
+    "y": 655.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida diez de julio huamachuco",
+    "text": "Avenida Diez de Julio Huamachuco",
+    "x": 654.4,
+    "y": 476.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida almirante blanco encalada",
+    "text": "Avenida Almirante Blanco Encalada",
+    "x": 337.3,
+    "y": 547.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "gorbea",
+    "text": "Gorbea",
+    "x": 306.0,
+    "y": 494.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "toesca",
+    "text": "Toesca",
+    "x": 306.7,
+    "y": 510.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida ejército libertador",
+    "text": "Avenida Ejército Libertador",
+    "x": 450.5,
+    "y": 426.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida tupper",
+    "text": "Avenida Tupper",
+    "x": 491.5,
+    "y": 579.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "santa lucía",
+    "text": "Santa Lucía",
+    "x": 652.8,
+    "y": 277.8,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida portugal",
+    "text": "Avenida Portugal",
+    "x": 803.1,
+    "y": 586.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "tarapacá",
+    "text": "Tarapacá",
+    "x": 606.5,
+    "y": 382.5,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "josé miguel de la barra",
+    "text": "José Miguel de la Barra",
+    "x": 670.6,
+    "y": 209.4,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida vicuña mackenna",
+    "text": "Avenida Vicuña Mackenna",
+    "x": 846.0,
+    "y": 577.6,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "doctor ramón corvalán melgarejo",
+    "text": "Doctor Ramón Corvalán Melgarejo",
+    "x": 757.1,
+    "y": 275.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida santa rosa",
+    "text": "Avenida Santa Rosa",
+    "x": 669.4,
+    "y": 578.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida general rondizzoni",
+    "text": "Avenida General Rondizzoni",
+    "x": 394.6,
+    "y": 728.5,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "el mirador",
+    "text": "El Mirador",
+    "x": 344.9,
+    "y": 699.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "abate molina",
+    "text": "Abate Molina",
+    "x": 309.4,
+    "y": 484.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida isabel riquelme",
+    "text": "Avenida Isabel Riquelme",
+    "x": 274.7,
+    "y": 823.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "fray camilo henríquez",
+    "text": "Fray Camilo Henríquez",
+    "x": 795.2,
+    "y": 482.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "diagonal vicuña mackenna",
+    "text": "Diagonal Vicuña Mackenna",
+    "x": 873.5,
+    "y": 724.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "san diego",
+    "text": "San Diego",
+    "x": 602.0,
+    "y": 716.6,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "unión americana",
+    "text": "Unión Americana",
+    "x": 298.9,
+    "y": 481.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "lira",
+    "text": "Lira",
+    "x": 718.5,
+    "y": 418.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "carmen",
+    "text": "Carmen",
+    "x": 743.2,
+    "y": 679.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "san francisco",
+    "text": "San Francisco",
+    "x": 623.2,
+    "y": 446.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida cardenal josé maría caro",
+    "text": "Avenida Cardenal José María Caro",
+    "x": 695.7,
+    "y": 210.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida brasil",
+    "text": "Avenida Brasil",
+    "x": 404.9,
+    "y": 224.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "almirante barroso",
+    "text": "Almirante Barroso",
+    "x": 433.3,
+    "y": 266.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "rosas",
+    "text": "Rosas",
+    "x": 324.3,
+    "y": 234.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "agustinas",
+    "text": "Agustinas",
+    "x": 274.5,
+    "y": 332.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "moneda",
+    "text": "Moneda",
+    "x": 427.4,
+    "y": 327.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "esperanza",
+    "text": "Esperanza",
+    "x": 259.8,
+    "y": 147.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "nataniel cox",
+    "text": "Nataniel Cox",
+    "x": 576.3,
+    "y": 667.5,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "copiapó",
+    "text": "Copiapó",
+    "x": 688.7,
+    "y": 486.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "ñuble",
+    "text": "Ñuble",
+    "x": 713.0,
+    "y": 703.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "club hípico",
+    "text": "Club Hípico",
+    "x": 401.3,
+    "y": 640.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "plaza ercilla",
+    "text": "Plaza Ercilla",
+    "x": 458.8,
+    "y": 542.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "eleuterio ramírez",
+    "text": "Eleuterio Ramírez",
+    "x": 559.8,
+    "y": 422.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "jécar antonio nehgme cristi",
+    "text": "Jécar Antonio Nehgme Cristi",
+    "x": 345.1,
+    "y": 361.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida ricardo cumming",
+    "text": "Avenida Ricardo Cumming",
+    "x": 351.6,
+    "y": 206.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "autopista central",
+    "text": "Autopista Central",
+    "x": 467.4,
+    "y": 274.3,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "catedral",
+    "text": "Catedral",
+    "x": 407.7,
+    "y": 262.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "monjitas",
+    "text": "Monjitas",
+    "x": 682.0,
+    "y": 232.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "juan martínez de rozas",
+    "text": "Juan Martínez de Rozas",
+    "x": 281.2,
+    "y": 196.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "bio-bio",
+    "text": "Bio-Bio",
+    "x": 632.6,
+    "y": 788.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "victoria",
+    "text": "Victoria",
+    "x": 700.9,
+    "y": 616.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "sierra bella",
+    "text": "Sierra Bella",
+    "x": 769.3,
+    "y": 649.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida mapocho",
+    "text": "Avenida Mapocho",
+    "x": 292.7,
+    "y": 170.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida independencia",
+    "text": "Avenida Independencia",
+    "x": 547.5,
+    "y": 162.2,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "cienfuegos",
+    "text": "Cienfuegos",
+    "x": 427.8,
+    "y": 362.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "pedro montt",
+    "text": "Pedro Montt",
+    "x": 445.1,
+    "y": 772.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "autopista costanera norte",
+    "text": "Autopista Costanera Norte",
+    "x": 856.9,
+    "y": 176.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida la paz",
+    "text": "Avenida La Paz",
+    "x": 564.2,
+    "y": 166.9,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "general prieto",
+    "text": "General Prieto",
+    "x": 444.1,
+    "y": 117.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida manuel rodríguez norte",
+    "text": "Avenida Manuel Rodríguez Norte",
+    "x": 456.9,
+    "y": 236.8,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "placer",
+    "text": "Placer",
+    "x": 713.5,
+    "y": 796.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "compañía de jesús",
+    "text": "Compañía de Jesús",
+    "x": 431.2,
+    "y": 276.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "sazié",
+    "text": "Sazié",
+    "x": 426.8,
+    "y": 426.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida viel",
+    "text": "Avenida Viel",
+    "x": 506.8,
+    "y": 624.2,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida manuel rodríguez sur",
+    "text": "Avenida Manuel Rodríguez Sur",
+    "x": 476.2,
+    "y": 440.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "san agustín",
+    "text": "San Agustín",
+    "x": 333.7,
+    "y": 785.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "santo domingo",
+    "text": "Santo Domingo",
+    "x": 432.7,
+    "y": 243.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "san pablo",
+    "text": "San Pablo",
+    "x": 248.8,
+    "y": 215.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "general velásquez",
+    "text": "General Velásquez",
+    "x": 71.0,
+    "y": 355.3,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "arica",
+    "text": "Arica",
+    "x": 218.6,
+    "y": 556.6,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "puente del abasto",
+    "text": "Puente del Abasto",
+    "x": 608.6,
+    "y": 179.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "andes",
+    "text": "Andes",
+    "x": 297.4,
+    "y": 183.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "gran avenida josé miguel carrera",
+    "text": "Gran Avenida José Miguel Carrera",
+    "x": 606.5,
+    "y": 824.5,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "chacabuco",
+    "text": "Chacabuco",
+    "x": 241.8,
+    "y": 418.6,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "merced",
+    "text": "Merced",
+    "x": 685.1,
+    "y": 241.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "victoria subercaseaux",
+    "text": "Victoria Subercaseaux",
+    "x": 676.0,
+    "y": 266.3,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "maipú",
+    "text": "Maipú",
+    "x": 262.8,
+    "y": 367.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida centenario",
+    "text": "Avenida Centenario",
+    "x": 466.4,
+    "y": 807.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "san ignacio de loyola",
+    "text": "San Ignacio de Loyola",
+    "x": 520.0,
+    "y": 609.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "arturo prat",
+    "text": "Arturo Prat",
+    "x": 621.9,
+    "y": 670.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "conferencia",
+    "text": "Conferencia",
+    "x": 287.2,
+    "y": 699.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "tupper",
+    "text": "Tupper",
+    "x": 435.1,
+    "y": 551.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "corredor transporte público vicuña mackenna",
+    "text": "Corredor Transporte Público Vicuña Mackenna",
+    "x": 884.1,
+    "y": 711.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "general las heras",
+    "text": "General Las Heras",
+    "x": 490.9,
+    "y": 475.2,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "curicó",
+    "text": "Curicó",
+    "x": 680.7,
+    "y": 369.8,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "bascuñán guerrero",
+    "text": "Bascuñán Guerrero",
+    "x": 307.0,
+    "y": 610.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida manuel antonio matta",
+    "text": "Avenida Manuel Antonio Matta",
+    "x": 705.1,
+    "y": 538.8,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida irarrázaval",
+    "text": "Avenida Irarrázaval",
+    "x": 817.5,
+    "y": 457.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida libertador bernardo o'higgins",
+    "text": "Avenida Libertador Bernardo O'Higgins",
+    "x": 320.8,
+    "y": 409.4,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "amunátegui",
+    "text": "Amunátegui",
+    "x": 501.9,
+    "y": 267.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "general mackenna",
+    "text": "General Mackenna",
+    "x": 529.4,
+    "y": 181.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "pío nono",
+    "text": "Pío Nono",
+    "x": 762.7,
+    "y": 223.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "santa elena",
+    "text": "Santa Elena",
+    "x": 833.7,
+    "y": 598.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "san alfonso",
+    "text": "San Alfonso",
+    "x": 289.3,
+    "y": 600.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "arauco",
+    "text": "Arauco",
+    "x": 734.6,
+    "y": 741.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida club hípico",
+    "text": "Avenida Club Hípico",
+    "x": 403.2,
+    "y": 789.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "general bulnes",
+    "text": "General Bulnes",
+    "x": 325.5,
+    "y": 187.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "matucana",
+    "text": "Matucana",
+    "x": 217.5,
+    "y": 272.2,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "maule",
+    "text": "Maule",
+    "x": 677.6,
+    "y": 671.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "manuel rodríguez norte",
+    "text": "Manuel Rodríguez Norte",
+    "x": 459.3,
+    "y": 352.4,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida manuel rodríguez",
+    "text": "Avenida Manuel Rodríguez",
+    "x": 452.9,
+    "y": 372.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "franklin",
+    "text": "Franklin",
+    "x": 834.1,
+    "y": 745.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "marín",
+    "text": "Marín",
+    "x": 732.6,
+    "y": 377.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida apostol santiago",
+    "text": "Avenida Apostol Santiago",
+    "x": 76.1,
+    "y": 290.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "lord cochrane",
+    "text": "Lord Cochrane",
+    "x": 538.6,
+    "y": 533.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "portales",
+    "text": "Portales",
+    "x": 248.8,
+    "y": 331.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "puente ronald wood gwiazdon",
+    "text": "Puente Ronald Wood Gwiazdon",
+    "x": 673.0,
+    "y": 198.8,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "almirante latorre",
+    "text": "Almirante Latorre",
+    "x": 410.8,
+    "y": 507.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida alcalde carlos valdovinos",
+    "text": "Avenida Alcalde Carlos Valdovinos",
+    "x": 290.0,
+    "y": 844.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida españa",
+    "text": "Avenida España",
+    "x": 346.8,
+    "y": 475.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "san martín",
+    "text": "San Martín",
+    "x": 492.3,
+    "y": 338.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "cueto",
+    "text": "Cueto",
+    "x": 298.8,
+    "y": 148.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "vergara",
+    "text": "Vergara",
+    "x": 440.0,
+    "y": 450.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "antofagasta",
+    "text": "Antofagasta",
+    "x": 270.4,
+    "y": 670.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "tucapel jiménez",
+    "text": "Tucapel Jiménez",
+    "x": 474.3,
+    "y": 328.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "ruta 78",
+    "text": "Ruta 78",
+    "x": 182.1,
+    "y": 821.6,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "ramón subercaseaux",
+    "text": "Ramón Subercaseaux",
+    "x": 311.5,
+    "y": 729.9,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "exposición",
+    "text": "Exposición",
+    "x": 243.2,
+    "y": 435.4,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "miguel león prado",
+    "text": "Miguel León Prado",
+    "x": 830.3,
+    "y": 607.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida recoleta",
+    "text": "Avenida Recoleta",
+    "x": 609.2,
+    "y": 176.1,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "padre miguel de olivares",
+    "text": "Padre Miguel de Olivares",
+    "x": 488.2,
+    "y": 417.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "carlos lorca tobar",
+    "text": "Carlos Lorca Tobar",
+    "x": 841.1,
+    "y": 649.8,
+    "z": 2.4
+   },
+   {
+    "cat": "PUNTO",
+    "q": "municipalidad santiago",
+    "text": "Municipalidad de Santiago",
+    "x": 580.9,
+    "y": 236.0
+   }
+  ],
+  "kpi": "<div class=\"tk\"><b>965</b><span>mesas</span></div><div class=\"tk\"><b>378.363</b><span>padrón</span></div><div class=\"tk\"><b>64,9%</b><span>particip.</span></div>",
+  "chipSub": "Censo 438.856 · Padrón 378.363 · Desbordes (RN) 51,1%",
+  "hasBldg": false,
+  "hasDossier": false
+ },
+ "13126": {
+  "name": "Quinta Normal",
+  "W": 960.0,
+  "H": 931.6,
+  "proj": {
+   "minLon": -70.7224596,
+   "maxLat": -33.4077149,
+   "kx": 0.834576,
+   "scale": 19260.4747,
+   "pad": 70,
+   "W": 960.0,
+   "H": 931.6
+  },
+  "search": [
+   {
+    "cat": "CALLE",
+    "q": "avenida carrascal",
+    "text": "Avenida Carrascal",
+    "x": 323.9,
+    "y": 289.5,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "nueva imperial",
+    "text": "Nueva Imperial",
+    "x": 350.5,
+    "y": 806.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "blanco garcés",
+    "text": "Blanco Garcés",
+    "x": 470.3,
+    "y": 850.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "constantino",
+    "text": "Constantino",
+    "x": 491.9,
+    "y": 830.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "villasana",
+    "text": "Villasana",
+    "x": 622.0,
+    "y": 504.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "poeta pedro prado",
+    "text": "Poeta Pedro Prado",
+    "x": 640.9,
+    "y": 506.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "lourdes",
+    "text": "Lourdes",
+    "x": 635.9,
+    "y": 594.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "radal del obispo francisco anabalón duarte",
+    "text": "Radal del Obispo Francisco Anabalón Duarte",
+    "x": 384.1,
+    "y": 396.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "gaspar de orense",
+    "text": "Gaspar de Orense",
+    "x": 426.9,
+    "y": 787.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "víctor hugo",
+    "text": "Víctor Hugo",
+    "x": 552.0,
+    "y": 280.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "barros arana",
+    "text": "Barros Arana",
+    "x": 489.4,
+    "y": 742.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "antonio ebner",
+    "text": "Antonio Ebner",
+    "x": 484.2,
+    "y": 620.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "santa fé",
+    "text": "Santa Fé",
+    "x": 478.9,
+    "y": 422.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "doctor lorenzo urcaray",
+    "text": "Doctor Lorenzo Urcaray",
+    "x": 503.8,
+    "y": 228.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "doctor josé tobías",
+    "text": "Doctor José Tobías",
+    "x": 440.1,
+    "y": 168.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "lo espinoza",
+    "text": "Lo Espinoza",
+    "x": 347.1,
+    "y": 199.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "calle los sauces",
+    "text": "Calle Los Sauces",
+    "x": 307.0,
+    "y": 185.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida brisas del río",
+    "text": "Avenida Brisas del Río",
+    "x": 201.8,
+    "y": 144.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "calle carmen lidia",
+    "text": "Calle Carmen Lidia",
+    "x": 245.3,
+    "y": 134.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "jujuy",
+    "text": "Jujuy",
+    "x": 373.3,
+    "y": 297.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "lazo de la vega",
+    "text": "Lazo de la Vega",
+    "x": 371.7,
+    "y": 164.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "doctor gonzalo bulnes",
+    "text": "Doctor Gonzalo Bulnes",
+    "x": 466.1,
+    "y": 296.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "doctor jorge walls",
+    "text": "Doctor Jorge Walls",
+    "x": 511.8,
+    "y": 239.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "hoevel",
+    "text": "Hoevel",
+    "x": 305.0,
+    "y": 337.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "embajador gómez",
+    "text": "Embajador Gómez",
+    "x": 494.0,
+    "y": 291.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "general velásquez",
+    "text": "General Velásquez",
+    "x": 554.0,
+    "y": 563.4,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "nueva extremadura",
+    "text": "Nueva Extremadura",
+    "x": 349.2,
+    "y": 366.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "santo domingo",
+    "text": "Santo Domingo",
+    "x": 526.3,
+    "y": 685.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "mendoza",
+    "text": "Mendoza",
+    "x": 552.7,
+    "y": 417.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "general brayer",
+    "text": "General Brayer",
+    "x": 518.7,
+    "y": 470.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida joaquín walker martínez",
+    "text": "Avenida Joaquín Walker Martínez",
+    "x": 563.3,
+    "y": 454.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida costanera sur",
+    "text": "Avenida Costanera Sur",
+    "x": 205.0,
+    "y": 115.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "san pablo",
+    "text": "San Pablo",
+    "x": 661.7,
+    "y": 630.7,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "santa genoveva",
+    "text": "Santa Genoveva",
+    "x": 458.2,
+    "y": 623.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "los andes de violeta parra",
+    "text": "Los Andes de Violeta Parra",
+    "x": 689.9,
+    "y": 575.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida mapocho",
+    "text": "Avenida Mapocho",
+    "x": 194.0,
+    "y": 430.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "córdova y figueroa",
+    "text": "Córdova y Figueroa",
+    "x": 538.6,
+    "y": 631.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida josé joaquín pérez",
+    "text": "Avenida José Joaquín Pérez",
+    "x": 38.9,
+    "y": 490.9,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "sergio valdovinos",
+    "text": "Sergio Valdovinos",
+    "x": 321.5,
+    "y": 504.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "juan martínez de rozas",
+    "text": "Juan Martínez de Rozas",
+    "x": 671.4,
+    "y": 592.2,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "román spech",
+    "text": "Román Spech",
+    "x": 752.8,
+    "y": 430.9,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "josé joaquín valledor",
+    "text": "José Joaquín Valledor",
+    "x": 471.5,
+    "y": 513.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "salvador gutiérrez",
+    "text": "Salvador Gutiérrez",
+    "x": 320.8,
+    "y": 381.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida coronel robles",
+    "text": "Avenida Coronel Robles",
+    "x": 551.1,
+    "y": 596.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "aviador bleriot",
+    "text": "Aviador Bleriot",
+    "x": 528.5,
+    "y": 309.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "francisco javier",
+    "text": "Francisco Javier",
+    "x": 534.9,
+    "y": 827.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "calle samuel izquierdo",
+    "text": "Calle Samuel Izquierdo",
+    "x": 209.8,
+    "y": 358.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida apostol santiago",
+    "text": "Avenida Apostol Santiago",
+    "x": 558.5,
+    "y": 728.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "zorrilla de san martín",
+    "text": "Zorrilla de San Martín",
+    "x": 444.1,
+    "y": 511.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "calle santa edelmira",
+    "text": "Calle Santa Edelmira",
+    "x": 234.3,
+    "y": 156.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "vicuña rozas",
+    "text": "Vicuña Rozas",
+    "x": 161.0,
+    "y": 602.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida maría rozas velásquez",
+    "text": "Avenida María Rozas Velásquez",
+    "x": 315.6,
+    "y": 849.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "matucana",
+    "text": "Matucana",
+    "x": 743.1,
+    "y": 564.5,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "díaz sagredo",
+    "text": "Díaz Sagredo",
+    "x": 538.5,
+    "y": 732.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "general bulnes",
+    "text": "General Bulnes",
+    "x": 889.6,
+    "y": 431.9,
+    "z": 2.2
+   },
+   {
+    "cat": "PUNTO",
+    "q": "municipalidad quinta normal",
+    "text": "Municipalidad de Quinta Normal",
+    "x": 530.3,
+    "y": 346.6
+   }
+  ],
+  "kpi": "<div class=\"tk\"><b>261</b><span>mesas</span></div><div class=\"tk\"><b>102.586</b><span>padrón</span></div><div class=\"tk\"><b>80,7%</b><span>particip.</span></div>",
+  "chipSub": "Censo 129.351 · Padrón 102.586 · Delfino (PS) 47,5%",
+  "hasBldg": false,
+  "hasDossier": false
+ },
+ "13128": {
+  "name": "Renca",
+  "W": 960.0,
+  "H": 547.1,
+  "proj": {
+   "minLon": -70.7825397,
+   "maxLat": -33.380316,
+   "kx": 0.834815,
+   "scale": 8818.2412,
+   "pad": 70,
+   "W": 960.0,
+   "H": 547.1
+  },
+  "search": [
+   {
+    "cat": "CALLE",
+    "q": "autopista vespucio norte",
+    "text": "Autopista Vespucio Norte",
+    "x": 104.2,
+    "y": 257.1,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "autopista costanera norte",
+    "text": "Autopista Costanera Norte",
+    "x": 224.9,
+    "y": 352.3,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida carrascal",
+    "text": "Avenida Carrascal",
+    "x": 512.7,
+    "y": 346.0,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida condell",
+    "text": "Avenida Condell",
+    "x": 488.3,
+    "y": 316.3,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "autopista central",
+    "text": "Autopista Central",
+    "x": 857.2,
+    "y": 430.2,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "clotario blest riffo",
+    "text": "Clotario Blest Riffo",
+    "x": 436.8,
+    "y": 325.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "miraflores",
+    "text": "Miraflores",
+    "x": 306.9,
+    "y": 254.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida vicuña mackenna",
+    "text": "Avenida Vicuña Mackenna",
+    "x": 310.3,
+    "y": 202.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "camino lo boza",
+    "text": "Camino Lo Boza",
+    "x": 341.9,
+    "y": 190.6,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "camino vecinal",
+    "text": "Camino Vecinal",
+    "x": 252.0,
+    "y": 155.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida josé manuel balmaceda",
+    "text": "Avenida José Manuel Balmaceda",
+    "x": 568.5,
+    "y": 262.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "los acacios",
+    "text": "Los Acacios",
+    "x": 739.4,
+    "y": 283.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "caupolicán",
+    "text": "Caupolicán",
+    "x": 674.4,
+    "y": 287.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "angamos",
+    "text": "Angamos",
+    "x": 618.2,
+    "y": 255.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida domingo santa maría",
+    "text": "Avenida Domingo Santa María",
+    "x": 795.4,
+    "y": 350.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "ignacio carrera pinto",
+    "text": "Ignacio Carrera Pinto",
+    "x": 589.1,
+    "y": 251.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "manuel rodríguez",
+    "text": "Manuel Rodríguez",
+    "x": 515.3,
+    "y": 235.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "general freire",
+    "text": "General Freire",
+    "x": 494.6,
+    "y": 252.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida josé miguel infante",
+    "text": "Avenida José Miguel Infante",
+    "x": 510.2,
+    "y": 302.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "fresia",
+    "text": "Fresia",
+    "x": 712.0,
+    "y": 154.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida dorsal",
+    "text": "Avenida Dorsal",
+    "x": 719.6,
+    "y": 244.6,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "general velásquez",
+    "text": "General Velásquez",
+    "x": 691.2,
+    "y": 131.5,
+    "z": 2.2
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida apóstol santiago",
+    "text": "Avenida Apóstol Santiago",
+    "x": 673.9,
+    "y": 171.6,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida jorge hirmas",
+    "text": "Avenida Jorge Hirmas",
+    "x": 779.9,
+    "y": 393.1,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida américo vespucio",
+    "text": "Avenida Américo Vespucio",
+    "x": 83.5,
+    "y": 279.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "brasil",
+    "text": "Brasil",
+    "x": 386.2,
+    "y": 239.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida puerto montt",
+    "text": "Avenida Puerto Montt",
+    "x": 696.0,
+    "y": 187.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "topocalma",
+    "text": "Topocalma",
+    "x": 408.5,
+    "y": 328.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "némesis",
+    "text": "Némesis",
+    "x": 357.9,
+    "y": 322.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "la punta",
+    "text": "La Punta",
+    "x": 356.1,
+    "y": 226.8,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "los helechos",
+    "text": "Los Helechos",
+    "x": 657.1,
+    "y": 211.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida presidente salvador allende gossens",
+    "text": "Avenida Presidente Salvador Allende Gossens",
+    "x": 436.7,
+    "y": 343.3,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida el montijo poniente",
+    "text": "Avenida El Montijo Poniente",
+    "x": 241.7,
+    "y": 324.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "el montijo",
+    "text": "El Montijo",
+    "x": 282.9,
+    "y": 199.9,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "el ventisquero",
+    "text": "El Ventisquero",
+    "x": 201.4,
+    "y": 250.4,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida presidente eduardo frei montalva",
+    "text": "Avenida Presidente Eduardo Frei Montalva",
+    "x": 715.0,
+    "y": 79.5,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "arturo prat",
+    "text": "Arturo Prat",
+    "x": 557.1,
+    "y": 278.0,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "avenida el montijo oriente",
+    "text": "Avenida El Montijo Oriente",
+    "x": 244.0,
+    "y": 324.7,
+    "z": 2.4
+   },
+   {
+    "cat": "CALLE",
+    "q": "general bulnes",
+    "text": "General Bulnes",
+    "x": 887.6,
+    "y": 477.2,
+    "z": 2.2
+   },
+   {
+    "cat": "PUNTO",
+    "q": "municipalidad renca",
+    "text": "Municipalidad de Renca",
+    "x": 647.4,
+    "y": 283.5
+   }
+  ],
+  "kpi": "<div class=\"tk\"><b>290</b><span>mesas</span></div><div class=\"tk\"><b>114.484</b><span>padrón</span></div><div class=\"tk\"><b>86,8%</b><span>particip.</span></div>",
+  "chipSub": "Censo 143.622 · Padrón 114.484 · Castro (IND) 75,7%",
+  "hasBldg": false,
+  "hasDossier": false
+ }
+}
