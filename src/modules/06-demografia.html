@@ -1,0 +1,41 @@
+<div class="section" id="sec-demo">
+  <div class="sec-header">
+    <div class="sec-eyebrow">Sección 03 · La Comuna</div>
+    <h2 class="sec-title"><em>Demografía</em></h2>
+    <p class="sec-deck">Perfil real de Independencia según el Censo 2024. Población joven, densa, con alta proporción de hogares unipersonales.</p>
+  </div>
+  <div class="sec-meta">
+    <span>FUENTE · <strong>Censo 2024 INE</strong></span>
+    <span>FECHA · <strong>Publicado jun.2025</strong></span>
+    <span>CRUCE · <strong>BCN Distrital 2024</strong></span>
+  </div>
+
+  <div class="grid g4" style="margin-bottom:16px">
+    <div class="card"><div class="card-eyebrow">Población total</div><div class="kpi-val blue">116.943<span class="seal p" data-tip="PENDIENTE · no confirmado en fuente primaria. La proyección INE 2024 da ~153.500 (brecha ~25%). Requiere dato censal comunal oficial (INE/BCN) antes de usarse como cifra dura."></span></div><div class="kpi-label">Dato real Censo 2024</div><div class="kpi-src">≠ 155.387 proyección INE</div></div>
+    <div class="card"><div class="card-eyebrow">Edad promedio</div><div class="kpi-val">36 años</div><div class="kpi-label">Comuna joven</div><div class="kpi-src">Censo 2024</div></div>
+    <div class="card"><div class="card-eyebrow">Densidad</div><div class="kpi-val">16.706</div><div class="kpi-label">hab/km² · 7 km²</div><div class="kpi-src">Censo 2024 / Muni</div></div>
+    <div class="card"><div class="card-eyebrow">Hogares unipersonales</div><div class="kpi-val gold">27,6%</div><div class="kpi-label">~12.534 hogares solos</div><div class="kpi-src">Censo 2024</div></div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card">
+      <div class="card-eyebrow">Composición etaria · estimación Censo 2024</div>
+      <div class="chart-box h260"><canvas id="chEtaria"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-eyebrow">Áreas verdes · m²/hab vs OMS</div>
+      <div class="chart-box h260"><canvas id="chVerdes"></canvas></div>
+      <div class="note note-red" style="margin-top:12px"><span class="note-icon">!</span><div>Solo el <strong>16,6%</strong> del mínimo recomendado. Argumento directo para el "Plan 100 Plazas y Esquinas Verdes".</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <div class="card-eyebrow">Distribución por género · 51,3% mujeres</div>
+    <div class="grid g2" style="margin-top:14px;align-items:center">
+      <div class="chart-box h220"><canvas id="chGenero"></canvas></div>
+      <div class="note note-blue"><span class="note-icon">i</span><div>Las mujeres son mayoría electoral (51,3% del padrón). Cualquier propuesta debe contemplarlo. En 2024 las 3 candidatas mujeres a alcalde sumaron <strong>47,96%</strong>.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 04 · SEGURIDAD -->

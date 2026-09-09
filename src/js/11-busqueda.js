@@ -1,0 +1,32 @@
+/* ════════ BÚSQUEDA ════════ */
+const searchIndex=[
+  {cat:'DEMOGRAFÍA',q:'población 116943 censo habitantes',sec:'demo',text:'Población 116.943 hab · Censo 2024'},
+  {cat:'DEMOGRAFÍA',q:'edad promedio 36 joven etaria',sec:'demo',text:'Edad promedio 36 años · composición etaria'},
+  {cat:'DEMOGRAFÍA',q:'áreas verdes 1.5 metros oms 9',sec:'demo',text:'Áreas verdes 1,5 m²/hab vs OMS 9 m²'},
+  {cat:'DEMOGRAFÍA',q:'género mujeres hombres 51 padrón',sec:'demo',text:'Mujeres 51,3% del padrón'},
+  {cat:'SEGURIDAD',q:'victimización 42 enusc hogares',sec:'seguridad',text:'Victimización 42,1% hogares · ENUSC 2023'},
+  {cat:'SEGURIDAD',q:'iglesias dmcs 4.9 ciper baja comunas',sec:'seguridad',text:'Iglesias -4,9% DMCS · CIPER nov.2025'},
+  {cat:'SEGURIDAD',q:'celular calle 80 noche 70 miedo',sec:'seguridad',text:'80% sin celular · 70% no sale de noche'},
+  {cat:'FINANZAS',q:'déficit 2481 deficit pladeco',sec:'finanzas',text:'Déficit $2.481M · PLADECO no recepcionado'},
+  {cat:'FINANZAS',q:'sinim 30957 ingresos gastos rubros',sec:'finanzas',text:'Ingresos $30.957M · Gastos $33.438M'},
+  {cat:'MIGRACIÓN',q:'inmigrantes 44 venezuela perú colombia',sec:'migracion',text:'44,4% extranjeros · Venezuela 46,7%'},
+  {cat:'ELECCIONES',q:'iglesias 25846 45 alcalde resultados',sec:'elecciones',text:'Iglesias: 25.846 votos · 45,09%'},
+  {cat:'ELECCIONES',q:'parada 15519 frente amplio concejo',sec:'elecciones',text:'Parada FA: 15.519 · Concejo 8 electos'},
+  {cat:'ELECTORAL',q:'padrón 79400 universo nulos blancos capturables',sec:'universo',text:'Padrón 90.972 · captura ~15.856'},
+  {cat:'ADVERSARIOS',q:'iglesias parada garrido becerra rivales adversarios',sec:'adversarios',text:'4 adversarios · perfiles detallados'},
+  {cat:'NO ELECTOS',q:'no electos lópez moris dc concejales aliados historial',sec:'noelectos',text:'11 no electos · aliados y veteranos'},
+  {cat:'DISCAPACIDAD',q:'discapacidad inclusión ivadec ccr senadis rampas',sec:'discapacidad',text:'Discapacidad · brecha certificación + 5 propuestas'},
+  {cat:'CALLES',q:'calles críticas 14 fama jar vivaceta seguridad sector',sec:'calles',text:'Calles críticas · 14 de la Fama, JAR'},
+  {cat:'SERVICIOS',q:'servicios municipales cesfam dideco brechas salud',sec:'servicios',text:'Servicios municipales · red + 6 brechas'},
+  {cat:'PERFIL',q:'perfil candidato matías roa imagen código visual estatura',sec:'perfil',text:'Perfil candidato · imagen y código visual'},
+  {cat:'FUENTES',q:'fuentes referencias censo enusc sinim servel ciper bibliografía',sec:'fuentes',text:'Compendio de fuentes verificadas'},
+  {cat:'SIMULADOR',q:'simulador votos escenario tasas captura meta calculadora',sec:'simulador',text:'Simulador interactivo de votos · ajusta tasas'},
+  {cat:'ADVERSARIOS',q:'iglesias parada garrido becerra rivales',sec:'adversarios',text:'4 adversarios · perfiles y debilidades'},
+  {cat:'PAVP',q:'becerra pavp ecologistas animalista 3983',sec:'pavp',text:'Becerra PAVP: 3.983 · 75% capturable'},
+  {cat:'TERRITORIO',q:'huasco 16126 mesas territorial 28 locales',sec:'territorial',text:'Corredor Huasco: 65 mesas · ~16.126 · 28%'},
+  {cat:'ESTRATEGIA',q:'ruta quincenas fases hoja 63 timeline',sec:'ruta',text:'Hoja de ruta · 5 fases · 63 quincenas'},
+  {cat:'PSICOLOGÍA',q:'cangrejo mentalidad envidia candados llaves',sec:'psicologia',text:'Mentalidad cangrejo · 8 candados y llaves'},
+  {cat:'LEGAL',q:'firmas notaría 800 servel candidatura requisitos',sec:'legal',text:'800 firmas + firma notarial · error 2021'},
+  {cat:'DEBATE',q:'debate ataque respuesta argumento',sec:'debate',text:'Modo Debate · 7 ataques + respuestas'}
+];
+

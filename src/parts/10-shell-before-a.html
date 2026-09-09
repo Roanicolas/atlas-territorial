@@ -1,0 +1,132 @@
+<div class="overlay" id="overlay" onclick="closeNav()"></div>
+<div class="app">
+
+<!-- ════════════ MAPA COMO INTERFAZ ════════════ -->
+
+<nav class="rail">
+  <button class="rail-btn active" id="rb-map" data-tip="Mapa" onclick="openTool(null)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20l-6-2V4l6 2m0 14l6-2m-6 2V6m6 12l6 2V6l-6-2m0 14V4M9 6l6-2"/></svg></button>
+  <button class="rail-btn" id="rb-capas" data-tip="Capas" onclick="openTool('capas')"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 8l10 6 10-6-10-6z"/><path d="M2 14l10 6 10-6"/></svg></button>
+  <button class="rail-btn" id="rb-apoyos" data-tip="Apoyos en terreno" onclick="openTool('apoyos')"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg></button>
+  <button class="rail-btn" id="rb-dossier" data-tip="Dossier · 23 módulos" onclick="openTool('dossier')"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h14v18H6a2 2 0 00-2 2z"/><path d="M4 19a2 2 0 012-2h14"/></svg></button>
+  <div class="rail-spacer"></div>
+  <button class="rail-btn" data-tip="Fuentes y metodología" onclick="openPanel('fuentes')"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg></button>
+</nav>
+
+<div class="tool" id="tool-capas">
+  <div class="tool-head"><div class="tool-title">Capas del mapa</div><div class="tool-sub">Enfoca el territorio por dimensión</div>
+    <div class="tool-kpi" id="capasKpi"><div class="tk"><b>231</b><span>mesas</span></div><div class="tk"><b>90.972</b><span>padrón</span></div><div class="tk"><b>73,2%</b><span>particip.</span></div></div>
+  </div>
+  <div class="tool-body">
+    <div class="tool-sec">Dimensiones</div>
+      <div class="lchip active" data-layer="todo" onclick="setLayer('todo')"><span class="d" style="background:#94A3B8"></span>Todo</div>
+      <div class="lchip" data-layer="electoral" onclick="setLayer('electoral')"><span class="d" style="background:#bd8b22"></span>Electoral</div>
+      <div class="lchip" data-layer="seguridad" onclick="setLayer('seguridad')"><span class="d" style="background:#d23a2e"></span>Seguridad</div>
+      <div class="lchip" data-layer="servicios" onclick="setLayer('servicios')"><span class="d" style="background:#1f8a50"></span>Servicios</div>
+      <div class="lchip" data-layer="contratos" onclick="setLayer('contratos')"><span class="d" style="background:#b5862a"></span>Contratos</div>
+      <div class="lchip" data-layer="territorio" onclick="setLayer('territorio')"><span class="d" style="background:#566b63"></span>Territorio</div>
+      <div class="lchip" data-layer="demografia" onclick="setLayer('demografia')"><span class="d" style="background:#2f9d67"></span>Demografía</div>
+    <div class="tool-sec">Superposiciones</div>
+      <div class="lchip" data-layer="parques" onclick="setLayer('parques')"><span class="d" style="background:#3FA06B"></span>Parques y plazas</div>
+      <div class="lchip" data-layer="deporte" onclick="setLayer('deporte')"><span class="d" style="background:#1f8a50"></span>Canchas y deporte</div>
+      <div class="lchip" data-layer="edificios" onclick="setLayer('edificios')"><span class="d" style="background:#a8915c"></span>Edificaciones</div>
+    <div class="tool-note">Límites y trama urbana: datos reales de la comuna (GeoJSON 13108 · OpenStreetMap).</div>
+  </div>
+</div>
+
+<div class="tool" id="tool-apoyos">
+  <div class="tool-head"><div class="tool-title">Apoyos en terreno</div><div class="tool-sub">Marca casas y locales según su posición</div></div>
+  <div class="tool-body">
+    <div class="tool-sec">Categorías</div>
+    <button class="terr-cat active" data-cat="a" onclick="setCat('a')"><span><i style="background:#16A34A"></i>Apoya</span><span id="cnt-a">0</span></button>
+    <button class="terr-cat" data-cat="p" onclick="setCat('p')"><span><i style="background:#D97706"></i>Posible</span><span id="cnt-p">0</span></button>
+    <button class="terr-cat" data-cat="o" onclick="setCat('o')"><span><i style="background:#EA580C"></i>Otro candidato</span><span id="cnt-o">0</span></button>
+    <button class="terr-cat" data-cat="c" onclick="setCat('c')"><span><i style="background:#DC2626"></i>Oposición</span><span id="cnt-c">0</span></button>
+    <button class="terr-cat" data-cat="n" onclick="setCat('n')"><span><i style="background:#94A3B8"></i>Sin contactar</span><span id="cnt-n">0</span></button>
+    <div class="terr-actions">
+      <button id="terrAdd" onclick="toggleTerrMode()">+ Añadir en el mapa</button>
+      <button class="terr-btn" onclick="clearPins()" title="Borrar todos">✕</button>
+    </div>
+    <div class="tool-sec">Filtrar en el mapa</div>
+    <div class="pf-row" id="pfRow">
+      <button class="pf on" data-f="all" onclick="setPinFilter('all')">Todos</button>
+      <button class="pf" data-f="a" onclick="setPinFilter('a')"><span class="d" style="background:#16A34A"></span>A</button>
+      <button class="pf" data-f="p" onclick="setPinFilter('p')"><span class="d" style="background:#D97706"></span>P</button>
+      <button class="pf" data-f="o" onclick="setPinFilter('o')"><span class="d" style="background:#EA580C"></span>O</button>
+      <button class="pf" data-f="c" onclick="setPinFilter('c')"><span class="d" style="background:#DC2626"></span>C</button>
+      <button class="pf" data-f="n" onclick="setPinFilter('n')"><span class="d" style="background:#94A3B8"></span>&#8212;</button>
+      <button class="pf" data-f="fu" onclick="setPinFilter('fu')">&#9733; Seguim.</button>
+    </div>
+    <div class="tool-sec">Contactos</div>
+    <div class="tool-kpi" id="ctStats"></div>
+    <input id="ctSearch" placeholder="Buscar nombre, calle, nota&#8230;" oninput="refreshCtList()">
+    <div id="ctList"></div>
+    <div class="terr-actions"><button class="terr-btn" style="flex:1;justify-content:center" onclick="exportPins()"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v3h16v-3"/></svg> JSON</button><button class="terr-btn" style="flex:1;justify-content:center" onclick="exportCSV()" title="Para Excel del comando">⬇ CSV</button></div>
+    <div class="tool-note">Los pines se guardan en este dispositivo. Toca un pin en el mapa para cambiarlo de categoría o eliminarlo.</div>
+  </div>
+</div>
+
+<div class="tool" id="tool-dossier">
+  <div class="tool-head"><div class="tool-title">Dossier de campaña</div><div class="tool-sub">23 módulos de investigación con datos citados</div></div>
+  <div class="tool-body">
+      <div class="dos-empty" id="dosEmpty" style="display:none"><b>Dossier no cargado para esta comuna</b>El levantamiento investigativo (23 m&#243;dulos citados) se elabora por comuna. Est&#225;n disponibles la ficha oficial y el detalle financiero SINIM 2022&#8211;2024.<div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><button onclick="openPanel('ficha')">Ficha comunal</button><button onclick="openPanel('gastos')" style="background:#0F1B33">Finanzas en detalle</button></div></div>
+      <div id="dosList">
+      <button class="dos-item" onclick="openPanel('ficha')"><span class="ix">★</span><span class="dt">Ficha comunal · INE / Servel / BCN</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dos-cat">Apertura</div>
+      <button class="dos-item" onclick="openPanel('cover')"><span class="ix">00</span><span class="dt">Portada</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('resumen')"><span class="ix">01</span><span class="dt">Resumen Ejecutivo</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('debate')"><span class="ix">02</span><span class="dt">Modo Debate</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dos-cat">La Comuna</div>
+      <button class="dos-item" onclick="openPanel('demo')"><span class="ix">03</span><span class="dt">Demografía</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('seguridad')"><span class="ix">04</span><span class="dt">Seguridad</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('finanzas')"><span class="ix">05</span><span class="dt">Finanzas y Contratos</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('gastos')"><span class="ix">24</span><span class="dt">Finanzas en detalle · SINIM</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('migracion')"><span class="ix">06</span><span class="dt">Migración</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dos-cat">Electoral</div>
+      <button class="dos-item" onclick="openPanel('elecciones')"><span class="ix">07</span><span class="dt">Elecciones 2024</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('universo')"><span class="ix">08</span><span class="dt">Universo Electoral</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('simulador')"><span class="ix">★</span><span class="dt">Simulador de Votos</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('adversarios')"><span class="ix">09</span><span class="dt">Adversarios</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('noelectos')"><span class="ix">10</span><span class="dt">No Electos</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('pavp')"><span class="ix">11</span><span class="dt">PAVP / Becerra</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('territorial')"><span class="ix">12</span><span class="dt">Territorio</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dos-cat">Propuestas</div>
+      <button class="dos-item" onclick="openPanel('discapacidad')"><span class="ix">13</span><span class="dt">Discapacidad</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('calles')"><span class="ix">14</span><span class="dt">Calles Críticas</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('servicios')"><span class="ix">15</span><span class="dt">Servicios Muni.</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dos-cat">Estrategia</div>
+      <button class="dos-item" onclick="openPanel('perfil')"><span class="ix">16</span><span class="dt">Perfil Candidato</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('psicologia')"><span class="ix">17</span><span class="dt">Mentalidad Cangrejo</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('ruta')"><span class="ix">18</span><span class="dt">Hoja de Ruta</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('legal')"><span class="ix">19</span><span class="dt">Requisitos Legales</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="dos-cat">Referencias</div>
+      <button class="dos-item" onclick="openPanel('auditoria')"><span class="ix">★</span><span class="dt">Auditoría de Datos</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="dos-item" onclick="openPanel('fuentes')"><span class="ix">20</span><span class="dt">Fuentes</span><svg viewBox="0 0 16 16" width="14" height="14"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+  </div>
+</div>
+
+<div class="statusbar">
+  <span>© OpenStreetMap contributors</span><span>Datos: Servel · CIPER · Contraloría · Censo 2024</span>
+  <div class="sb-right">
+    <span class="sb-mono" id="coordsRead">−33.4154, −70.6660</span>
+    <span class="sb-mono" id="zoomPct">100%</span>
+    <div id="scaleBar"><div class="sbLine"></div><span class="sb-mono" id="scaleTxt">500 m</span></div>
+  </div>
+</div>
+<div class="legend" id="legendPill"><span class="d"></span><span class="lg-t"></span></div>
+<div class="toasts" id="toasts"></div>
+<div id="pinMenu"></div>
+<div id="pinEd"></div>
+<div class="addBanner"><span class="d" id="abDot" style="background:#16A34A"></span><span id="abTxt">Modo añadir · toca el mapa para marcar</span><button onclick="toggleTerrMode()">Listo</button></div>
+<div class="tabbar">
+  <button class="active" id="tb-map" onclick="openTool(null)"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20l-6-2V4l6 2m0 14l6-2m-6 2V6m6 12l6 2V6l-6-2m0 14V4M9 6l6-2"/></svg>Mapa</button>
+  <button id="tb-capas" onclick="openTool('capas')"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 8l10 6 10-6-10-6z"/><path d="M2 14l10 6 10-6"/></svg>Capas</button>
+  <button id="tb-apoyos" onclick="openTool('apoyos')"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5L12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg>Apoyos</button>
+  <button id="tb-dossier" onclick="openTool('dossier')"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h14v18H6a2 2 0 00-2 2z"/><path d="M4 19a2 2 0 012-2h14"/></svg>Dossier</button>
+</div>
+
+<div id="mapview">
+  <div class="map-chip"><div class="mc-i"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.4" fill="currentColor" stroke="none"/></svg></div><div><b id="chipName">Independencia</b><span id="chipSub">Censo 116.943 &#183; Padr&#243;n 90.972 &#183; Iglesias 45,1%</span></div></div>
+  <div class="north" title="Norte"><svg width="15" height="15" viewBox="0 0 24 24"><path d="M12 3l3.6 8.4L12 9.6 8.4 11.4z" fill="currentColor"/><path d="M12 10.5V21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+  <div class="map-sweep"></div>
+  <div class="map-frame"></div>

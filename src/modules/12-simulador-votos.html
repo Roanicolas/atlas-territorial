@@ -1,0 +1,38 @@
+<div class="section" id="sec-simulador">
+  <div class="sec-header">
+    <div class="sec-eyebrow">Sección ★ · Electoral · Interactivo</div>
+    <h2 class="sec-title">Simulador de <em>votos</em></h2>
+    <p class="sec-deck">Mueve las tasas de captura de cada segmento y observa en tiempo real si alcanzas la meta de ~15.500. Cambia el escenario para ver el efecto de que la derecha se fragmente o se una.</p>
+  </div>
+
+  <div class="scenario-tabs" id="scenarioTabs">
+    <div class="scenario-tab active" data-scn="frag" onclick="setScenario('frag')">Derecha fragmentada · Garrido/Jara compiten aparte</div>
+    <div class="scenario-tab" data-scn="unida" onclick="setScenario('unida')">Derecha unida · solo Iglesias</div>
+  </div>
+
+  <div class="card">
+    <div class="sim-grid">
+      <div>
+        <div class="card-eyebrow">Tasas de captura por segmento · ajusta los deslizadores</div>
+        <div id="simRows"></div>
+        <button class="sim-reset" onclick="resetSim()">↺ Restaurar valores base del dossier</button>
+      </div>
+      <div class="card gauge-wrap" style="background:rgba(255,255,255,0.02)">
+        <div>
+          <div class="gauge-sub">Votos proyectados</div>
+          <div class="gauge-total" id="gaugeTotal">0</div>
+        </div>
+        <div class="gauge-bar">
+          <div class="gauge-fill" id="gaugeFill" style="width:0%"></div>
+          <div class="gauge-meta-line" id="gaugeMetaLine"><div class="gauge-meta-lbl">Meta 15.500</div></div>
+        </div>
+        <div class="verdict" id="simVerdict">—</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:14px;letter-spacing:.05em">vs. 25.846 de Iglesias en 2024 · padrón 90.972</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note note-blue" style="margin-top:16px"><span class="note-icon">i</span><div>Las cifras "total origen" provienen de los resultados verificados SERVEL 2024. Las tasas iniciales son las estimaciones del dossier. El simulador es una herramienta de planificación — no una predicción. Úsalo para definir <strong>dónde concentrar el esfuerzo de captura</strong>.</div></div>
+</div>
+
+<!-- 09 · ADVERSARIOS -->
