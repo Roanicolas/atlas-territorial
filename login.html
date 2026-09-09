@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas Territorial · Acceso</title>
+<style>
+  :root {
+    --brand: #2952E3; --brand-hover: #1e3fb8; --brand-tint: rgba(41,82,227,0.08);
+    --paper: #ffffff; --paper-2: #f7f8fb; --paper-3: #eef1f7;
+    --cream-light: #f4f0e2;
+    --ink: #0f172a; --ink-2: #334155; --ink-3: #64748b; --ink-4: #94a3b8;
+    --line: rgba(15,23,42,0.09); --line-2: rgba(15,23,42,0.16);
+    --green: #16a34a; --green-tint: rgba(22,163,74,0.08);
+    --amber: #d97706; --amber-tint: rgba(217,119,6,0.08);
+    --red: #dc2626; --red-tint: rgba(220,38,38,0.06);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--cream-light); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+  .mono { font-family: "SF Mono", ui-monospace, "Menlo", "Consolas", monospace; letter-spacing: 0.02em; }
+
+  /* BANNER MODO MAQUETA */
+  .demo-banner { display: none; background: #1e293b; color: #fff; padding: 10px 16px; font-size: 12.5px; text-align: center; line-height: 1.5; }
+  .demo-banner.show { display: block; }
+  .demo-banner b { color: #fbbf24; }
+  .demo-banner code { background: rgba(255,255,255,0.12); padding: 1px 5px; border-radius: 4px; font-size: 11.5px; }
+
+  .auth-page { min-height: calc(100vh - 40px); display: flex; flex-direction: column; align-items: center; padding: 48px 20px; }
+  @media (max-width: 640px) { .auth-page { padding: 32px 16px; } }
+
+  .brand-header { display: flex; align-items: center; gap: 10px; margin: 0 0 40px; }
+  .brand-mark { width: 40px; height: 40px; border-radius: 10px; background: var(--brand); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(41,82,227,0.24); }
+  .brand-mark svg { width: 22px; height: 22px; }
+  .brand-name { font-size: 20px; font-weight: 600; letter-spacing: -0.015em; }
+  .brand-name .b1 { color: var(--ink); }
+  .brand-name .b2 { color: var(--brand); }
+
+  .card { width: 100%; max-width: 460px; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 36px 36px 32px; box-shadow: 0 10px 40px rgba(15,23,42,0.06); }
+  @media (max-width: 640px) { .card { padding: 28px 24px; border-radius: 12px; } }
+
+  .card-eyebrow { font-size: 11px; letter-spacing: 0.14em; color: var(--brand); text-transform: uppercase; font-weight: 600; margin: 0 0 12px; }
+  .card-eyebrow.warn { color: var(--red); }
+  .card-title { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 8px; line-height: 1.15; }
+  .card-sub { font-size: 14.5px; color: var(--ink-2); line-height: 1.55; margin: 0 0 24px; }
+  .card-sub b { color: var(--ink); font-weight: 600; }
+
+  .field { margin: 0 0 18px; }
+  .field-l { display: flex; align-items: center; justify-content: space-between; margin: 0 0 7px; }
+  .field-label { font-size: 12.5px; font-weight: 600; color: var(--ink-2); }
+  .field-hint { font-size: 12px; color: var(--ink-3); }
+  .field-hint a { color: var(--brand); text-decoration: none; font-weight: 500; cursor: pointer; }
+  .field-hint a:hover { text-decoration: underline; }
+  .field-note { font-size: 12px; color: var(--ink-3); margin: 6px 0 0; display: flex; align-items: center; gap: 6px; }
+  .field-note svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; }
+  .field-error { font-size: 12.5px; color: var(--red); margin: 6px 0 0; display: none; align-items: flex-start; gap: 6px; line-height: 1.4; }
+  .field-error.show { display: flex; }
+  .field-error svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 1px; }
+  .field.has-error .input { border-color: var(--red); }
+
+  .input-wrap { position: relative; }
+  .input { width: 100%; height: 46px; padding: 0 14px; border: 1px solid var(--line-2); border-radius: 8px; font-size: 15px; font-family: inherit; color: var(--ink); background: var(--paper); transition: all 150ms; }
+  .input:hover { border-color: var(--ink-4); }
+  .input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-tint); }
+  .input:disabled, .input[readonly] { background: var(--paper-2); color: var(--ink-2); cursor: not-allowed; }
+  .input-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--ink-4); cursor: pointer; background: transparent; border: none; padding: 0; }
+  .input-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+  .input-icon:hover { color: var(--ink-2); }
+  .input.has-icon { padding-right: 44px; }
+  .input.has-icon-l { padding-left: 42px; }
+  .input-icon-l { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--ink-3); pointer-events: none; }
+  .input-icon-l svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+
+  .invite-card { background: linear-gradient(135deg, var(--brand-tint) 0%, rgba(41,82,227,0.02) 100%); border: 1px solid rgba(41,82,227,0.24); border-radius: 12px; padding: 18px 20px; margin: 0 0 24px; }
+  .invite-l { font-size: 10.5px; letter-spacing: 0.14em; color: var(--brand); font-weight: 700; margin: 0 0 12px; text-transform: uppercase; display: flex; align-items: center; gap: 6px; }
+  .invite-l svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+  .invite-row { display: flex; align-items: center; gap: 12px; margin: 10px 0; }
+  .invite-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+  .invite-t { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+  .invite-t-l { font-size: 11px; color: var(--ink-3); }
+  .invite-t-v { font-size: 14px; color: var(--ink); font-weight: 600; }
+  .invite-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 16px; margin: 14px 0 0; padding: 14px 0 0; border-top: 1px solid rgba(41,82,227,0.16); }
+  .invite-meta-i { display: flex; flex-direction: column; gap: 2px; }
+  .invite-meta-l { font-size: 10px; color: var(--ink-3); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+  .invite-meta-v { font-size: 13px; color: var(--ink); font-weight: 600; }
+
+  .pw-strength { display: flex; gap: 3px; margin: 8px 0 0; }
+  .pw-bar { height: 3px; flex: 1; border-radius: 2px; background: var(--paper-3); transition: background 150ms; }
+  .pw-strength-l { font-size: 11px; color: var(--ink-3); margin: 6px 0 0; }
+  .pw-strength-l b { font-weight: 600; }
+
+  .checkbox-row { display: flex; align-items: flex-start; gap: 10px; margin: 8px 0 22px; font-size: 12.5px; color: var(--ink-2); line-height: 1.5; }
+  .checkbox { width: 18px; height: 18px; border: 1.5px solid var(--line-2); border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; margin-top: 1px; background: var(--paper); }
+  .checkbox.on { background: var(--brand); border-color: var(--brand); }
+  .checkbox svg { width: 12px; height: 12px; stroke: #fff; fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; opacity: 0; }
+  .checkbox.on svg { opacity: 1; }
+  .checkbox-row a { color: var(--brand); text-decoration: none; font-weight: 500; }
+
+  .btn { width: 100%; height: 48px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; border: 1px solid var(--line-2); background: var(--paper); color: var(--ink); font-family: inherit; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: all 120ms; position: relative; }
+  .btn:hover:not(:disabled) { background: var(--paper-2); }
+  .btn-primary { background: var(--brand); color: #fff; border-color: var(--brand); }
+  .btn-primary:hover:not(:disabled) { background: var(--brand-hover); border-color: var(--brand-hover); }
+  .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+  .btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .btn .spinner { display: none; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.4); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; }
+  .btn.loading .spinner { display: inline-block; }
+  .btn.loading .btn-label, .btn.loading svg:not(.spinner) { display: none; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .divider { display: flex; align-items: center; gap: 12px; margin: 20px 0; color: var(--ink-4); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+  .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  .card-foot { text-align: center; margin: 24px 0 0; padding: 20px 0 0; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-3); line-height: 1.6; }
+  .card-foot a { color: var(--brand); text-decoration: none; font-weight: 600; cursor: pointer; }
+  .card-foot a:hover { text-decoration: underline; }
+
+  .security-notice { display: flex; align-items: flex-start; gap: 10px; background: var(--paper-2); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin: 24px 0 0; font-size: 12.5px; color: var(--ink-2); line-height: 1.5; }
+  .security-notice svg { width: 16px; height: 16px; stroke: var(--brand); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 1px; }
+  .security-notice b { color: var(--ink); font-weight: 600; }
+
+  .alert { border-radius: 8px; padding: 12px 14px; margin: 0 0 20px; font-size: 13px; line-height: 1.5; display: none; align-items: flex-start; gap: 10px; }
+  .alert.show { display: flex; }
+  .alert svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 1px; }
+  .alert-error { background: var(--red-tint); color: #991b1b; border: 1px solid rgba(220,38,38,0.24); }
+  .alert-success { background: var(--green-tint); color: #14532d; border: 1px solid rgba(22,163,74,0.24); }
+
+  .otp-row { display: flex; gap: 8px; justify-content: center; margin: 8px 0 16px; }
+  .otp-input { width: 48px; height: 60px; border: 1.5px solid var(--line-2); border-radius: 10px; font-family: "SF Mono", monospace; font-size: 26px; font-weight: 700; text-align: center; color: var(--ink); background: var(--paper); }
+  .otp-input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-tint); }
+  .otp-input.filled { border-color: var(--brand); }
+  @media (max-width: 480px) { .otp-input { width: 44px; height: 54px; font-size: 22px; } .otp-row { gap: 6px; } }
+
+  .illo { width: 88px; height: 88px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+  .illo svg { width: 44px; height: 44px; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+  .illo.brand { background: var(--brand-tint); } .illo.brand svg { stroke: var(--brand); }
+  .illo.red { background: var(--red-tint); } .illo.red svg { stroke: var(--red); }
+  .illo.green { background: var(--green-tint); } .illo.green svg { stroke: var(--green); }
+
+  .verify-note { background: var(--paper-2); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; font-size: 12.5px; color: var(--ink-2); line-height: 1.5; margin: 16px 0 0; text-align: left; }
+  .verify-note b { color: var(--ink); font-weight: 600; }
+  .verify-email-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; background: var(--paper-2); border: 1px solid var(--line); border-radius: 999px; font-size: 13px; color: var(--ink); font-weight: 500; margin: 8px 0 12px; }
+  .verify-email-badge svg { width: 13px; height: 13px; stroke: var(--brand); fill: none; stroke-width: 2; }
+
+  .center { text-align: center; }
+  .resend { margin: 12px 0 0; font-size: 13px; color: var(--ink-3); text-align: center; }
+  .resend a { color: var(--brand); font-weight: 500; text-decoration: none; cursor: pointer; }
+  .resend a.disabled { color: var(--ink-4); cursor: not-allowed; pointer-events: none; }
+
+  .privacy-bar { max-width: 460px; margin: 24px auto 0; padding: 0 8px; font-size: 11.5px; color: var(--ink-3); text-align: center; line-height: 1.5; }
+  .privacy-bar b { color: var(--ink-2); font-weight: 600; }
+
+  .status-list { list-style: none; padding: 0; margin: 0 0 20px; text-align: left; }
+  .status-list li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 13px; color: var(--ink-2); }
+  .status-list li:last-child { border-bottom: none; }
+  .status-list li svg { width: 14px; height: 14px; color: var(--ink-3); stroke: currentColor; fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 3px; }
+  .status-list li b { color: var(--ink); font-weight: 600; }
+
+  .view { display: none; }
+  .view.on { display: block; }
+  .full-loader { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 60px 20px; color: var(--ink-3); font-size: 14px; }
+  .full-loader .spin-big { width: 28px; height: 28px; border: 3px solid var(--line-2); border-top-color: var(--brand); border-radius: 50%; animation: spin 0.8s linear infinite; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- BANNER: se activa solo si CONFIG.SUPABASE_URL sigue con el   -->
+<!-- valor de ejemplo. Al pegar tus credenciales reales, desaparece. -->
+<!-- ============================================================ -->
+<div class="demo-banner" id="demo-banner">
+  <b>Modo maqueta</b> — este login aún no está conectado a una base de datos real.
+  Puedes navegar todas las pantallas, pero nada se guarda. Para activarlo,
+  abre este archivo y pega tus credenciales de Supabase donde dice
+  <code>CONFIG</code> (primeras líneas del <code>&lt;script&gt;</code>).
+</div>
+
+<div class="auth-page">
+  <div class="brand-header">
+    <div class="brand-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21s-8-7-8-13a8 8 0 0 1 16 0c0 6-8 13-8 13z"/><circle cx="12" cy="8" r="2.5"/>
+      </svg>
+    </div>
+    <div class="brand-name"><span class="b1">Atlas</span><span class="b2">Territorial</span></div>
+  </div>
+
+  <!-- Se muestra solo mientras se valida un token de invitación al cargar -->
+  <div class="view" id="v-cargando">
+    <div class="card center">
+      <div class="full-loader"><div class="spin-big"></div>Verificando tu invitación…</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 1 · LOGIN -->
+  <!-- ============================================================ -->
+  <div class="view on" id="v-login">
+    <div class="card">
+      <p class="card-eyebrow">ACCESO</p>
+      <h1 class="card-title">Inicia sesión</h1>
+      <p class="card-sub">Accede a tu campaña municipal y al CRM territorial.</p>
+
+      <div class="alert alert-error" id="login-alert"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span id="login-alert-text"></span></div>
+
+      <form id="form-login">
+        <div class="field" id="f-login-email">
+          <div class="field-l"><span class="field-label">Correo electrónico</span></div>
+          <div class="input-wrap">
+            <span class="input-icon-l"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></span>
+            <input class="input has-icon-l" type="email" id="login-email" required placeholder="tu@correo.cl" autocomplete="username">
+          </div>
+        </div>
+
+        <div class="field" id="f-login-pw">
+          <div class="field-l">
+            <span class="field-label">Contraseña</span>
+            <span class="field-hint"><a onclick="ir('recuperar')">¿La olvidaste?</a></span>
+          </div>
+          <div class="input-wrap">
+            <span class="input-icon-l"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+            <input class="input has-icon-l has-icon" type="password" id="login-pw" required placeholder="••••••••" autocomplete="current-password">
+            <button type="button" class="input-icon" onclick="togglePw('login-pw', this)"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+        </div>
+
+        <div class="checkbox-row">
+          <div class="checkbox on" id="chk-remember" onclick="this.classList.toggle('on')"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Mantener sesión iniciada en este dispositivo</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="btn-login">
+          <span class="spinner"></span>
+          <svg viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          <span class="btn-label">Iniciar sesión</span>
+        </button>
+      </form>
+
+      <div class="security-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v7c0 5-3.5 9-8 10-4.5-1-8-5-8-10V5z"/><path d="M9 12l2 2 4-4"/></svg>
+        <span>El registro es <b>solo por invitación</b>. Si necesitas acceso, pídeselo a tu coordinador — te llegará un enlace privado por correo.</span>
+      </div>
+    </div>
+    <p class="privacy-bar">Datos protegidos según <b>Ley 21.719</b>. Sesión con doble factor para roles de coordinación.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 2 · REGISTRO (solo accesible con ?token= válido en la URL) -->
+  <!-- ============================================================ -->
+  <div class="view" id="v-registro">
+    <div class="card">
+      <p class="card-eyebrow">INVITACIÓN VÁLIDA</p>
+      <h1 class="card-title">Aceptar invitación</h1>
+      <p class="card-sub">Completa tus datos para activar tu cuenta.</p>
+
+      <div class="alert alert-error" id="registro-alert"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span id="registro-alert-text"></span></div>
+
+      <div class="invite-card">
+        <p class="invite-l"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>Invitación de tu coordinador</p>
+        <div class="invite-row">
+          <div class="invite-avatar" id="inv-avatar">--</div>
+          <div class="invite-t"><span class="invite-t-l">Te invitó</span><span class="invite-t-v" id="inv-invitador">—</span></div>
+        </div>
+        <div class="invite-meta">
+          <div class="invite-meta-i"><span class="invite-meta-l">Brigada</span><span class="invite-meta-v" id="inv-brigada">—</span></div>
+          <div class="invite-meta-i"><span class="invite-meta-l">Rol asignado</span><span class="invite-meta-v" id="inv-rol">—</span></div>
+          <div class="invite-meta-i"><span class="invite-meta-l">Campaña</span><span class="invite-meta-v" id="inv-campana">—</span></div>
+          <div class="invite-meta-i"><span class="invite-meta-l">Expira</span><span class="invite-meta-v" id="inv-expira">—</span></div>
+        </div>
+      </div>
+
+      <form id="form-registro">
+        <div class="field">
+          <div class="field-l"><span class="field-label">Correo electrónico</span></div>
+          <div class="input-wrap">
+            <span class="input-icon-l"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></span>
+            <input class="input has-icon-l" type="email" id="reg-email" readonly>
+          </div>
+          <p class="field-note"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Viene de la invitación, no se puede modificar</p>
+        </div>
+
+        <div class="field" id="f-reg-nombre">
+          <div class="field-l"><span class="field-label">Nombre completo</span></div>
+          <div class="input-wrap"><input class="input" type="text" id="reg-nombre" required minlength="3" placeholder="Matías Roa Pérez" autocomplete="name"></div>
+          <p class="field-error" id="err-reg-nombre"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Ingresa tu nombre completo</p>
+        </div>
+
+        <div class="field" id="f-reg-pw">
+          <div class="field-l"><span class="field-label">Contraseña</span></div>
+          <div class="input-wrap">
+            <input class="input has-icon" type="password" id="reg-pw" required minlength="10" placeholder="Mínimo 10 caracteres" autocomplete="new-password" oninput="evaluarFuerza(this.value)">
+            <button type="button" class="input-icon" onclick="togglePw('reg-pw', this)"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+          <div class="pw-strength"><div class="pw-bar" id="pwb1"></div><div class="pw-bar" id="pwb2"></div><div class="pw-bar" id="pwb3"></div><div class="pw-bar" id="pwb4"></div></div>
+          <p class="pw-strength-l" id="pw-strength-label">Fuerza: escribe tu contraseña</p>
+          <p class="field-error" id="err-reg-pw"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></p>
+        </div>
+
+        <div class="checkbox-row">
+          <div class="checkbox" id="chk-terminos" onclick="this.classList.toggle('on')"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <span>Acepto los <a href="#">Términos de Uso</a> y la <a href="#">Política de Protección de Datos</a> (Ley 21.719).</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="btn-registro">
+          <span class="spinner"></span>
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span class="btn-label">Aceptar invitación y crear cuenta</span>
+        </button>
+      </form>
+
+      <div class="card-foot">¿Ya tienes cuenta? <a onclick="ir('login')">Inicia sesión</a></div>
+    </div>
+    <p class="privacy-bar">Este enlace es <b>único y de un solo uso</b>. Se invalida automáticamente al crear la cuenta.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 3 · VERIFICAR (código OTP de 6 dígitos) -->
+  <!-- ============================================================ -->
+  <div class="view" id="v-verificar">
+    <div class="card center">
+      <div class="illo brand"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+      <p class="card-eyebrow">DOBLE FACTOR · PASO FINAL</p>
+      <h1 class="card-title">Verifica tu identidad</h1>
+      <p class="card-sub">Enviamos un código de 6 dígitos a</p>
+      <div class="verify-email-badge"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg><span id="otp-email">—</span></div>
+
+      <div class="alert alert-error" id="otp-alert"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span id="otp-alert-text"></span></div>
+
+      <form id="form-otp">
+        <div class="otp-row" id="otp-row">
+          <input class="otp-input" maxlength="1" inputmode="numeric" data-i="0">
+          <input class="otp-input" maxlength="1" inputmode="numeric" data-i="1">
+          <input class="otp-input" maxlength="1" inputmode="numeric" data-i="2">
+          <input class="otp-input" maxlength="1" inputmode="numeric" data-i="3">
+          <input class="otp-input" maxlength="1" inputmode="numeric" data-i="4">
+          <input class="otp-input" maxlength="1" inputmode="numeric" data-i="5">
+        </div>
+        <button type="submit" class="btn btn-primary" id="btn-otp">
+          <span class="spinner"></span>
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          <span class="btn-label">Verificar y continuar</span>
+        </button>
+      </form>
+
+      <p class="resend">¿No te llegó? <a id="resend-link" class="disabled" onclick="reenviarOtp()">Reenviar en <b id="resend-timer">28s</b></a></p>
+
+      <div class="verify-note"><b>El código es válido por 10 minutos.</b> Revisa spam si no lo ves. Nunca lo compartas con nadie.</div>
+    </div>
+    <p class="privacy-bar">Después de esto, tu cuenta queda activa y podrás iniciar sesión normalmente.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 4 · RECUPERAR CONTRASEÑA -->
+  <!-- ============================================================ -->
+  <div class="view" id="v-recuperar">
+    <div class="card">
+      <p class="card-eyebrow">RECUPERACIÓN</p>
+      <h1 class="card-title">¿Olvidaste tu contraseña?</h1>
+      <p class="card-sub">Ingresa tu correo y te enviaremos un enlace seguro para crear una nueva.</p>
+
+      <div class="alert alert-success" id="reset-success"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Si el correo existe en el sistema, te llegarán las instrucciones en unos minutos.</span></div>
+
+      <form id="form-recuperar">
+        <div class="field">
+          <div class="field-l"><span class="field-label">Correo electrónico</span></div>
+          <div class="input-wrap">
+            <span class="input-icon-l"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></span>
+            <input class="input has-icon-l" type="email" id="reset-email" required placeholder="tu@correo.cl">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="btn-recuperar">
+          <span class="spinner"></span>
+          <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <span class="btn-label">Enviar instrucciones</span>
+        </button>
+      </form>
+
+      <div class="verify-note" style="margin-top: 20px;"><b>El enlace es válido por 30 minutos.</b> Si no te llega, revisa spam o pide a tu coordinador que reinicie tu contraseña.</div>
+      <div class="card-foot">¿Recordaste la contraseña? <a onclick="ir('login')">Volver a iniciar sesión</a></div>
+    </div>
+    <p class="privacy-bar">Por seguridad, <b>nunca</b> te pediremos tu contraseña por email, chat o teléfono.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 5 · ENLACE INVÁLIDO -->
+  <!-- ============================================================ -->
+  <div class="view" id="v-invalido">
+    <div class="card center">
+      <div class="illo red"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <p class="card-eyebrow warn">ACCESO DENEGADO</p>
+      <h1 class="card-title">Este enlace ya no es válido</h1>
+      <p class="card-sub">Puede haber pasado alguna de estas cosas:</p>
+      <ul class="status-list">
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span><b>Expiró.</b> Las invitaciones son válidas 7 días.</span></li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span><b>Ya fue usado.</b> Cada enlace se activa una sola vez.</span></li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg><span><b>Fue revocado</b> por tu coordinador.</span></li>
+      </ul>
+      <div class="card-foot">¿Ya tienes cuenta? <a onclick="ir('login')">Inicia sesión</a></div>
+    </div>
+    <p class="privacy-bar">Por seguridad, no revelamos si el correo asociado existe en el sistema.</p>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- 6 · ÉXITO (tras verificar OTP) -->
+  <!-- ============================================================ -->
+  <div class="view" id="v-exito">
+    <div class="card center">
+      <div class="illo green"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <p class="card-eyebrow">CUENTA ACTIVADA</p>
+      <h1 class="card-title">¡Listo, <span id="exito-nombre">bienvenido</span>!</h1>
+      <p class="card-sub">Tu cuenta quedó activa. Ya puedes entrar al panel de campaña.</p>
+      <button class="btn btn-primary" onclick="irAlPanel()">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <span class="btn-label">Entrar a Atlas Territorial</span>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- Cliente Supabase (CDN, sin instalación) -->
+<!-- ============================================================ -->
+<script type="module">
+// ================================================================
+// CONFIG — esto es lo ÚNICO que hay que editar para pasar de
+// "modo maqueta" a funcionamiento real. Reemplaza estos dos
+// valores por los de tu proyecto Supabase (Settings → API).
+// ================================================================
+const CONFIG = {
+  SUPABASE_URL: "https://TU-PROYECTO.supabase.co",
+  SUPABASE_ANON_KEY: "TU-ANON-KEY-AQUI",
+  // Ruta del panel al que se entra después de iniciar sesión:
+  URL_PANEL: "https://roanicolas.github.io/atlas-territorial/",
+};
+
+const ES_MAQUETA = CONFIG.SUPABASE_URL.includes("TU-PROYECTO");
+
+// ---------------------------------------------------------------
+// Cliente real (solo se crea si hay credenciales de verdad)
+// ---------------------------------------------------------------
+let supabase = null;
+if (!ES_MAQUETA) {
+  const { createClient } = await import("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm");
+  supabase = createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_ANON_KEY);
+} else {
+  document.getElementById("demo-banner").classList.add("show");
+}
+
+// ---------------------------------------------------------------
+// Router simple entre las 6 pantallas
+// ---------------------------------------------------------------
+window.ir = function ir(vista) {
+  document.querySelectorAll(".view").forEach(el => el.classList.toggle("on", el.id === "v-" + vista));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  limpiarAlertas();
+};
+
+function limpiarAlertas() {
+  document.querySelectorAll(".alert").forEach(a => a.classList.remove("show"));
+  document.querySelectorAll(".field").forEach(f => f.classList.remove("has-error"));
+  document.querySelectorAll(".field-error").forEach(e => e.classList.remove("show"));
+}
+
+function mostrarAlerta(id, texto) {
+  document.getElementById(id + "-text").textContent = texto;
+  document.getElementById(id).classList.add("show");
+}
+
+function mostrarErrorCampo(fieldId, errId, texto) {
+  document.getElementById(fieldId).classList.add("has-error");
+  const err = document.getElementById(errId);
+  if (texto !== undefined) {
+    // Conserva el ícono SVG y solo reemplaza el texto del mensaje.
+    let span = err.querySelector(".err-txt");
+    if (!span) { span = document.createElement("span"); span.className = "err-txt"; err.appendChild(span); }
+    span.textContent = texto;
+  }
+  err.classList.add("show");
+}
+
+function setLoading(btnId, on) {
+  document.getElementById(btnId).classList.toggle("loading", on);
+  document.getElementById(btnId).disabled = on;
+}
+
+window.togglePw = function togglePw(id, btn) {
+  const inp = document.getElementById(id);
+  const isPw = inp.type === "password";
+  inp.type = isPw ? "text" : "password";
+  btn.innerHTML = isPw
+    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>'
+    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
+};
+
+window.evaluarFuerza = function evaluarFuerza(pw) {
+  const bars = ["pwb1","pwb2","pwb3","pwb4"].map(id => document.getElementById(id));
+  bars.forEach(b => { b.style.background = ""; });
+  let score = 0;
+  if (pw.length >= 10) score++;
+  if (pw.length >= 14) score++;
+  if (/[A-Z]/.test(pw) && /[a-z]/.test(pw)) score++;
+  if (/[0-9]/.test(pw) && /[^A-Za-z0-9]/.test(pw)) score++;
+  const colores = ["#dc2626", "#dc2626", "#d97706", "#16a34a"];
+  const label = document.getElementById("pw-strength-label");
+  for (let i = 0; i < score; i++) bars[i].style.background = colores[Math.min(score - 1, 3)];
+  if (pw.length === 0) { label.innerHTML = "Fuerza: escribe tu contraseña"; return; }
+  if (pw.length < 10) { label.innerHTML = 'Fuerza: <b style="color:#dc2626">Muy débil</b> · mínimo 10 caracteres'; return; }
+  const textos = ["Débil", "Aceptable", "Buena", "Muy fuerte"];
+  const idx = Math.min(score - 1, 3);
+  label.innerHTML = `Fuerza: <b style="color:${colores[idx]}">${textos[idx]}</b>`;
+};
+
+// ---------------------------------------------------------------
+// OTP: avance automático entre casillas + pegar código completo
+// ---------------------------------------------------------------
+const otpInputs = () => [...document.querySelectorAll("#otp-row .otp-input")];
+otpInputs().forEach((inp, i) => {
+  inp.addEventListener("input", () => {
+    inp.value = inp.value.replace(/\D/g, "").slice(0, 1);
+    inp.classList.toggle("filled", inp.value.length === 1);
+    if (inp.value && otpInputs()[i + 1]) otpInputs()[i + 1].focus();
+  });
+  inp.addEventListener("keydown", (e) => {
+    if (e.key === "Backspace" && !inp.value && otpInputs()[i - 1]) otpInputs()[i - 1].focus();
+  });
+  inp.addEventListener("paste", (e) => {
+    const texto = (e.clipboardData.getData("text") || "").replace(/\D/g, "").slice(0, 6);
+    if (texto.length === 6) {
+      e.preventDefault();
+      otpInputs().forEach((o, idx) => { o.value = texto[idx]; o.classList.add("filled"); });
+      otpInputs()[5].focus();
+    }
+  });
+});
+function otpValor() { return otpInputs().map(i => i.value).join(""); }
+
+let resendInterval = null;
+function iniciarContadorReenvio() {
+  const link = document.getElementById("resend-link");
+  clearInterval(resendInterval);
+  let s = 28;
+  link.classList.add("disabled");
+  const render = () => { link.innerHTML = `Reenviar en <b id="resend-timer">${s}s</b>`; };
+  render();
+  resendInterval = setInterval(() => {
+    s--;
+    if (s <= 0) { clearInterval(resendInterval); link.classList.remove("disabled"); link.textContent = "Reenviar código"; }
+    else render();
+  }, 1000);
+}
+
+// ================================================================
+// 1 · LOGIN
+// ================================================================
+document.getElementById("form-login").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  limpiarAlertas();
+  const email = document.getElementById("login-email").value.trim();
+  const password = document.getElementById("login-pw").value;
+
+  if (ES_MAQUETA) {
+    setLoading("btn-login", true);
+    setTimeout(() => { setLoading("btn-login", false); ir("exito"); document.getElementById("exito-nombre").textContent = email.split("@")[0]; }, 700);
+    return;
+  }
+
+  setLoading("btn-login", true);
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  setLoading("btn-login", false);
+
+  if (error) {
+    mostrarAlerta("login-alert", "Correo o contraseña incorrectos.");
+    return;
+  }
+  // Sesión iniciada.
+  window.location.href = CONFIG.URL_PANEL;
+});
+
+// ================================================================
+// 2 · REGISTRO (llega por ?token=... en la URL)
+// ================================================================
+let tokenActual = null;
+
+async function procesarInvitacionEnURL() {
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get("token");
+  if (!token) return; // vista por defecto: login
+
+  tokenActual = token;
+  ir("cargando");
+
+  if (ES_MAQUETA) {
+    // Datos de ejemplo para poder ver la pantalla sin backend real.
+    setTimeout(() => {
+      pintarInvitacion({
+        email: "matias.roa@correo.cl", rol: "voluntario",
+        brigada_nombre: "Independencia Norte", campana_nombre: "Municipal 2028",
+        invitado_por: "Carla Rojas", expira_en_dias: 6,
+      });
+      ir("registro");
+    }, 500);
+    return;
+  }
+
+  const { data, error } = await supabase.rpc("validar_invitacion", { p_token: token });
+  if (error || !data || data.length === 0) { ir("invalido"); return; }
+  pintarInvitacion(data[0]);
+  ir("registro");
+}
+
+function pintarInvitacion(inv) {
+  document.getElementById("reg-email").value = inv.email;
+  document.getElementById("inv-invitador").textContent = inv.invitado_por;
+  document.getElementById("inv-avatar").textContent = inv.invitado_por.split(" ").map(w => w[0]).slice(0, 2).join("").toUpperCase();
+  document.getElementById("inv-brigada").textContent = inv.brigada_nombre || "—";
+  document.getElementById("inv-campana").textContent = inv.campana_nombre;
+  document.getElementById("inv-expira").textContent = `en ${inv.expira_en_dias} día${inv.expira_en_dias === 1 ? "" : "s"}`;
+  const roles = { jefe_campana: "Jefe de Campaña", coordinador: "Coordinador", voluntario: "Voluntario Territorial" };
+  document.getElementById("inv-rol").textContent = roles[inv.rol] || inv.rol;
+}
+
+document.getElementById("form-registro").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  limpiarAlertas();
+
+  const nombre = document.getElementById("reg-nombre").value.trim();
+  const password = document.getElementById("reg-pw").value;
+  const email = document.getElementById("reg-email").value;
+  const aceptaTerminos = document.getElementById("chk-terminos").classList.contains("on");
+
+  if (nombre.length < 3) { mostrarErrorCampo("f-reg-nombre", "err-reg-nombre", "Ingresa tu nombre completo"); return; }
+  if (password.length < 10) { mostrarErrorCampo("f-reg-pw", "err-reg-pw", "Mínimo 10 caracteres."); return; }
+  if (!aceptaTerminos) { mostrarAlerta("registro-alert", "Debes aceptar los Términos y la Política de Protección de Datos para continuar."); return; }
+
+  if (ES_MAQUETA) {
+    setLoading("btn-registro", true);
+    setTimeout(() => {
+      setLoading("btn-registro", false);
+      document.getElementById("otp-email").textContent = email;
+      ir("verificar");
+      iniciarContadorReenvio();
+    }, 900);
+    return;
+  }
+
+  setLoading("btn-registro", true);
+  try {
+    const resp = await fetch(`${CONFIG.SUPABASE_URL}/functions/v1/aceptar-invitacion`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token: tokenActual, nombre, password }),
+    });
+    const body = await resp.json();
+    setLoading("btn-registro", false);
+
+    if (!resp.ok) {
+      const mensajes = {
+        CONTRASENA_FILTRADA: body.detalle || "Esa contraseña aparece en filtraciones públicas conocidas. Elige otra.",
+        CONTRASENA_DEBIL: body.detalle || "La contraseña no cumple el mínimo de seguridad.",
+        INVITACION_INVALIDA: "Esta invitación ya no es válida.",
+        DEMASIADOS_INTENTOS: "Demasiados intentos. Espera unos minutos e inténtalo de nuevo.",
+        NOMBRE_INVALIDO: "Revisa el nombre ingresado.",
+      };
+      if (body.error === "INVITACION_INVALIDA") { ir("invalido"); return; }
+      mostrarAlerta("registro-alert", mensajes[body.error] || "No pudimos crear tu cuenta. Intenta de nuevo.");
+      return;
+    }
+
+    document.getElementById("otp-email").textContent = body.email;
+    ir("verificar");
+    iniciarContadorReenvio();
+  } catch (err) {
+    setLoading("btn-registro", false);
+    mostrarAlerta("registro-alert", "No pudimos conectar con el servidor. Revisa tu internet e intenta de nuevo.");
+  }
+});
+
+// ================================================================
+// 3 · VERIFICAR OTP
+// ================================================================
+document.getElementById("form-otp").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  limpiarAlertas();
+  const codigo = otpValor();
+  if (codigo.length !== 6) { mostrarAlerta("otp-alert", "Ingresa los 6 dígitos del código."); return; }
+
+  if (ES_MAQUETA) {
+    setLoading("btn-otp", true);
+    setTimeout(() => { setLoading("btn-otp", false); ir("exito"); }, 700);
+    return;
+  }
+
+  setLoading("btn-otp", true);
+  const email = document.getElementById("otp-email").textContent;
+  const { error } = await supabase.auth.verifyOtp({ email, token: codigo, type: "email" });
+  setLoading("btn-otp", false);
+
+  if (error) { mostrarAlerta("otp-alert", "Código incorrecto o vencido. Verifica los 6 dígitos."); return; }
+  ir("exito");
+});
+
+window.reenviarOtp = async function reenviarOtp() {
+  if (document.getElementById("resend-link").classList.contains("disabled")) return;
+  iniciarContadorReenvio();
+  if (ES_MAQUETA) return;
+  const email = document.getElementById("otp-email").textContent;
+  await supabase.auth.signInWithOtp({ email });
+};
+
+// ================================================================
+// 4 · RECUPERAR CONTRASEÑA
+// ================================================================
+document.getElementById("form-recuperar").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = document.getElementById("reset-email").value.trim();
+  setLoading("btn-recuperar", true);
+
+  if (!ES_MAQUETA) {
+    await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: CONFIG.URL_PANEL + "restablecer.html",
+    });
+  } else {
+    await new Promise(r => setTimeout(r, 600));
+  }
+
+  setLoading("btn-recuperar", false);
+  // Mensaje idéntico exista o no la cuenta (no revelar información).
+  document.getElementById("reset-success").classList.add("show");
+});
+
+// ================================================================
+// 5 · ATAJO AL PANEL
+// ================================================================
+window.irAlPanel = function irAlPanel() {
+  window.location.href = CONFIG.URL_PANEL;
+};
+
+// ================================================================
+// Arranque: revisar si hay sesión activa o token de invitación
+// ================================================================
+(async function arrancar() {
+  await procesarInvitacionEnURL();
+  if (tokenActual) return; // ya se resolvió arriba (registro o inválido)
+
+  if (!ES_MAQUETA) {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session) { window.location.href = CONFIG.URL_PANEL; return; }
+  }
+  ir("login");
+})();
+</script>
+</body>
+</html>
