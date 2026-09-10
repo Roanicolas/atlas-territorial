@@ -1,17 +1,84 @@
-/* ═══════════ FILTRO KPI DEL MAPA (sexo · grupo etario) ═══════════ */
-// Grupo etario: única desagregación real disponible es la de Independencia
-// (Censo 2024, ya usada en el módulo Demografía / chEtaria). Las otras 5
-// comunas solo tienen sexo desagregado en FICHAS[cod].bcn.sexo — por eso
-// la pestaña "Grupo etario" queda deshabilitada fuera de Independencia,
-// en vez de estimar un cruce que no está en la fuente.
-const ETARIA_13108 = [
-  {l:'0–14', v:18360}, {l:'15–29', v:25700}, {l:'30–44', v:31600},
-  {l:'45–64', v:26900}, {l:'65+', v:14735},
-];
+/* ═══════════ FILTRO KPI DEL MAPA · 6 dimensiones ═══════════ */
+// Cada compute(F,sel) usa exclusivamente campos ya presentes en FICHAS
+// (BCN/Censo/CASEN/CEAD/SINIM/Servel), sin cruces ni estimaciones nuevas.
+const GOLD_KPI='#E8AE3C', GRAY_KPI='#E3E8F0';
+const clNum = s => typeof s==='number' ? s : parseFloat(String(s).replace(/\./g,'').replace(',','.'));
+const fmtInt = n => Math.round(n).toLocaleString('es-CL');
+const fmtPct = n => n.toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1})+'%';
+const dchart = (labels,data,hi) => ({type:'doughnut',labels,data,colors:data.map((_,i)=>hi===-1||hi===i?GOLD_KPI:GRAY_KPI)});
+const bchart = (labels,data,hi) => ({type:'bar',labels,data,colors:data.map((_,i)=>hi===-1||hi===i?GOLD_KPI:GRAY_KPI)});
 
-let mkpDim = 'sexo';      // 'sexo' | 'etario'
-let mkpSel = null;        // índice del chip activo, null = "Todos"
-let mkpChartObj = null;
+const NOTE_CENSO='Fuente: BCN Reporte Comunal 2024 (Censo INE).';
+
+const KPI_DEFS = {
+  sexo:{
+    label:'Sexo', chips:['Todos','Mujeres','Hombres'],
+    compute(F,sel){
+      const h=clNum(F.bcn.sexo.h2024), m=clNum(F.bcn.sexo.m2024), tot=h+m;
+      if(sel===1) return {value:fmtInt(m), sub:'Mujeres · '+fmtPct(m/tot*100)+' del total', chart:dchart(['Mujeres','Hombres'],[m,h],0), note:NOTE_CENSO};
+      if(sel===2) return {value:fmtInt(h), sub:'Hombres · '+fmtPct(h/tot*100)+' del total', chart:dchart(['Mujeres','Hombres'],[m,h],1), note:NOTE_CENSO};
+      return {value:fmtInt(tot), sub:'Población total · '+F.nombre, chart:dchart(['Mujeres','Hombres'],[m,h],-1), note:NOTE_CENSO};
+    }
+  },
+  extranjeria:{
+    label:'Extranjería', chips:['Todos','Chilenos','Extranjeros'],
+    compute(F,sel){
+      const ex=F.bcn.extranjeros_censo, tot=clNum(ex.censada), fuera=clNum(ex.nacidos_fuera), cl=tot-fuera, pct=clNum(ex.pct);
+      if(sel===1) return {value:fmtInt(cl), sub:'Nacidos en Chile · '+fmtPct(100-pct)+' del total', chart:dchart(['Chile','Extranjero'],[cl,fuera],0), note:'Fuente: Censo 2024 INE (nacidos fuera de Chile).'};
+      if(sel===2) return {value:fmtInt(fuera), sub:'Nacidos en el extranjero · '+fmtPct(pct)+' del total', chart:dchart(['Chile','Extranjero'],[cl,fuera],1), note:'Fuente: Censo 2024 INE (nacidos fuera de Chile).'};
+      return {value:fmtInt(tot), sub:'Población censada · '+F.nombre, chart:dchart(['Chile','Extranjero'],[cl,fuera],-1), note:'Fuente: Censo 2024 INE (nacidos fuera de Chile).'};
+    }
+  },
+  pobreza:{
+    label:'Pobreza', chips:['Por ingresos','Multidimensional'],
+    compute(F,sel){
+      const d = sel===1 ? F.bcn.pobreza_multi : F.bcn.pobreza_ingresos;
+      const lbl = sel===1 ? 'Multidimensional' : 'Por ingresos';
+      return {value:fmtPct(clNum(d.c2022)), sub:lbl+' · CASEN 2022 (2017: '+fmtPct(clNum(d.c2017))+')',
+        chart:bchart(['2017','2022'],[clNum(d.c2017),clNum(d.c2022)],1),
+        note:'Fuente: CASEN 2017 y 2022 (encuesta muestral, no censal).'};
+    }
+  },
+  seguridad:{
+    label:'Seguridad (CEAD)', chips:['Delitos violentos','Violencia intrafamiliar'],
+    compute(F,sel){
+      if(sel===1){
+        const v=clNum(F.bcn.cead_vif.t2024);
+        return {value:fmtInt(v), sub:'VIF · tasa 2024 (x100 mil hab.)', chart:bchart(['2024'],[v],0),
+          note:'Fuente: CEAD. Solo hay tasa 2024 publicada para VIF en el reporte BCN.'};
+      }
+      const cv=F.bcn.cead_violentos, v22=clNum(cv.t2022), v23=clNum(cv.t2023), v24=clNum(cv.t2024);
+      return {value:fmtInt(v24), sub:'Delitos violentos · tasa 2024 (x100 mil hab.)', chart:bchart(['2022','2023','2024'],[v22,v23,v24],2),
+        note:'Fuente: CEAD, Subsecretaría de Prevención del Delito.'};
+    }
+  },
+  ingreso:{
+    label:'Ingreso municipal', chips:['Total','Propios (IPP)','FCM','Transferencias'],
+    compute(F,sel){
+      const keys=['total','ipp','fcm','transf'];
+      const arr=F.fin[keys[sel]||'total'];
+      const v22=clNum(arr[1]), v23=clNum(arr[2]), v24=clNum(arr[3]);
+      const lbl=arr[0].replace(/\s*en M\$$/,'');
+      return {value:fmtInt(v24)+' M$', sub:lbl+' · 2024', chart:bchart(['2022','2023','2024'],[v22,v23,v24],2),
+        note:'Fuente: SINIM 2022–2024, vía BCN Reporte Comunal.'};
+    }
+  },
+  padron:{
+    label:'Padrón electoral', chips:['Inscritos','Votaron','Abstención','Ext. habilitados'],
+    compute(F,sel){
+      const p=F.bcn.padron2024, ee=F.bcn.electores_extranjeros;
+      const insc=clNum(p.inscritos), vot=clNum(p.votacion), part=clNum(p.participacion_pct), abst=insc-vot;
+      const NOTE='Fuente: Servel, Padrón Electoral 2024.';
+      if(sel===1) return {value:fmtInt(vot), sub:fmtPct(part)+' de participación', chart:dchart(['Votaron','Abstención'],[vot,abst],0), note:NOTE};
+      if(sel===2) return {value:fmtInt(abst), sub:fmtPct(100-part)+' de abstención', chart:dchart(['Votaron','Abstención'],[vot,abst],1), note:NOTE+' Abstención = inscritos − votos.'};
+      if(sel===3){ const n=clNum(ee.n), pct=clNum(ee.pct);
+        return {value:fmtInt(n), sub:fmtPct(pct)+' del padrón total', chart:dchart(['Extranjeros','Chilenos'],[n,insc-n],0), note:NOTE}; }
+      return {value:fmtInt(insc), sub:'Padrón 2024 · '+F.nombre, chart:dchart(['Votaron','Abstención'],[vot,abst],-1), note:NOTE};
+    }
+  }
+};
+
+let mkpDim='sexo', mkpSel=0, mkpChartObj=null;
 
 function toggleKpiPanel(){
   const p=document.getElementById('mkpPanel'), b=document.getElementById('mkpBtn');
@@ -21,89 +88,56 @@ function toggleKpiPanel(){
 }
 
 function setKpiDim(dim){
-  if(dim==='etario' && CUR!=='13108') return; // deshabilitado, sin dato real
-  mkpDim=dim; mkpSel=null;
-  document.getElementById('mkpTabSexo').classList.toggle('on', dim==='sexo');
-  document.getElementById('mkpTabEtario').classList.toggle('on', dim==='etario');
+  mkpDim=dim; mkpSel=0;
   renderKpiChips(); renderKpiResultado();
 }
 
 function renderKpiChips(){
-  const cont=document.getElementById('mkpChips');
-  const labels = mkpDim==='sexo' ? ['Todos','Mujeres','Hombres'] : ['Todos'].concat(ETARIA_13108.map(e=>e.l));
-  cont.innerHTML = labels.map((l,i)=>
-    '<button class="mkp-chip'+((mkpSel===null&&i===0)||mkpSel===i-1?' on':'')+'" onclick="setKpiSel('+(i-1)+')">'+l+'</button>'
+  const chips=KPI_DEFS[mkpDim].chips;
+  document.getElementById('mkpChips').innerHTML = chips.map((l,i)=>
+    '<button class="mkp-chip'+(i===mkpSel?' on':'')+'" onclick="setKpiSel('+i+')">'+l+'</button>'
   ).join('');
 }
 
-function setKpiSel(idx){
-  mkpSel = idx<0 ? null : idx;
-  renderKpiChips(); renderKpiResultado();
-}
+function setKpiSel(i){ mkpSel=i; renderKpiChips(); renderKpiResultado(); }
 
 function renderKpiResultado(){
   const F=FICHAS[CUR]; if(!F) return;
-  const etarioDisponible = CUR==='13108';
-  document.getElementById('mkpTabEtario').disabled = !etarioDisponible;
-  const totalPob = parseInt((F.bcn.censo.p2024||'0').replace(/\./g,''),10);
-  let val, sub, chartData;
-
-  if(mkpDim==='sexo'){
-    const h=parseInt(F.bcn.sexo.h2024.replace(/\./g,''),10);
-    const m=parseInt(F.bcn.sexo.m2024.replace(/\./g,''),10);
-    if(mkpSel===null){ val=fmt(totalPob); sub='Población total · '+F.nombre; }
-    else if(mkpSel===0){ val=fmt(m); sub='Mujeres · '+(totalPob?(m/totalPob*100).toFixed(1):'—')+'% del total'; }
-    else { val=fmt(h); sub='Hombres · '+(totalPob?(h/totalPob*100).toFixed(1):'—')+'% del total'; }
-    chartData={type:'doughnut',labels:['Mujeres','Hombres'],data:[m,h],
-      colors:[mkpSel===1?'#CBD4E1':C_KPI.gold, mkpSel===0?'#CBD4E1':C_KPI.n3]};
-  } else {
-    const tot = ETARIA_13108.reduce((a,e)=>a+e.v,0);
-    if(mkpSel===null){ val=fmt(tot); sub='Población estimada · '+F.nombre; }
-    else { const e=ETARIA_13108[mkpSel]; val=fmt(e.v); sub=e.l+' años · '+(e.v/tot*100).toFixed(1)+'% del total'; }
-    chartData={type:'bar',labels:ETARIA_13108.map(e=>e.l),data:ETARIA_13108.map(e=>e.v),
-      colors:ETARIA_13108.map((e,i)=> mkpSel===null||mkpSel===i ? C_KPI.gold : '#E3E8F0')};
-  }
-
-  document.getElementById('mkpVal').textContent = val;
-  document.getElementById('mkpSub').textContent = sub;
-  document.getElementById('mkpNote').textContent = mkpDim==='sexo'
-    ? 'Fuente: BCN Reporte Comunal 2024 (Censo INE).'
-    : (etarioDisponible ? 'Fuente: Censo 2024 INE, estimación por tramo.' : 'Grupo etario: dato aún no levantado para esta comuna — disponible en Independencia.');
-
-  drawKpiChart(chartData);
+  const r = KPI_DEFS[mkpDim].compute(F, mkpSel);
+  document.getElementById('mkpVal').textContent = r.value;
+  document.getElementById('mkpSub').textContent = r.sub;
+  document.getElementById('mkpNote').textContent = r.note;
+  drawKpiChart(r.chart);
 }
-
-const C_KPI = {gold:'#E8AE3C', n3:'#8593AB', brand:'#2952E3'};
 
 function drawKpiChart(cfg){
   if(mkpChartObj){ mkpChartObj.destroy(); mkpChartObj=null; }
   const ctx=document.getElementById('mkpChart'); if(!ctx) return;
   if(cfg.type==='doughnut'){
-    mkpChartObj = new Chart(ctx,{type:'doughnut',data:{labels:cfg.labels,
+    mkpChartObj=new Chart(ctx,{type:'doughnut',data:{labels:cfg.labels,
       datasets:[{data:cfg.data,backgroundColor:cfg.colors,borderWidth:2,borderColor:'#fff'}]},
       options:{responsive:true,maintainAspectRatio:false,cutout:'62%',
         plugins:{legend:{display:true,position:'bottom',labels:{color:'#3E4C66',boxWidth:9,boxHeight:9,font:{size:10}}},
-          tooltip:{callbacks:{label:c=>c.label+': '+fmt(c.raw)}}}}});
+          tooltip:{callbacks:{label:c=>c.label+': '+fmtInt(c.raw)}}}}});
   } else {
-    mkpChartObj = new Chart(ctx,{type:'bar',data:{labels:cfg.labels,
-      datasets:[{data:cfg.data,backgroundColor:cfg.colors,borderRadius:4,maxBarThickness:22}]},
+    mkpChartObj=new Chart(ctx,{type:'bar',data:{labels:cfg.labels,
+      datasets:[{data:cfg.data,backgroundColor:cfg.colors,borderRadius:4,maxBarThickness:34}]},
       options:{responsive:true,maintainAspectRatio:false,
-        plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>fmt(c.raw)+' hab.'}}},
-        scales:{x:{grid:{display:false},ticks:{color:'#8593AB',font:{size:9}}},
+        plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>fmtInt(c.raw)}}},
+        scales:{x:{grid:{display:false},ticks:{color:'#8593AB',font:{size:9.5}}},
           y:{display:false,grid:{display:false}}}}});
   }
 }
 
 function refreshKpiPanel(){
-  if(CUR!=='13108' && mkpDim==='etario'){ mkpDim='sexo'; mkpSel=null;
-    document.getElementById('mkpTabSexo').classList.add('on');
-    document.getElementById('mkpTabEtario').classList.remove('on');
-  }
+  const sel=document.getElementById('mkpSelect'); if(sel) sel.value=mkpDim;
   renderKpiChips(); renderKpiResultado();
 }
 
 // Se engancha a switchComuna (ya definida arriba) sin modificarla: al
-// cambiar de comuna, si el panel está abierto, se refresca solo.
+// cambiar de comuna, si el panel está abierto, se refresca solo —
+// conservando la dimensión y el chip activo (las 6 comunas comparten
+// exactamente los mismos campos, así que la selección sigue teniendo sentido).
 const __switchComunaKpiHook = switchComuna;
 switchComuna = function(cod){
   __switchComunaKpiHook(cod);

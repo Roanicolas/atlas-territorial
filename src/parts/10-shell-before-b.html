@@ -4,12 +4,15 @@
   </div>
   <div class="map-kpi-panel" id="mkpPanel">
     <div class="mkp-head">
-      <span class="mkp-title">Filtros KPI</span>
+      <select class="mkp-select" id="mkpSelect" onchange="setKpiDim(this.value)">
+        <option value="sexo">Sexo</option>
+        <option value="extranjeria">Extranjería</option>
+        <option value="pobreza">Pobreza</option>
+        <option value="seguridad">Seguridad (CEAD)</option>
+        <option value="ingreso">Ingreso municipal</option>
+        <option value="padron">Padrón electoral</option>
+      </select>
       <div class="mkp-close" onclick="toggleKpiPanel()">✕</div>
-    </div>
-    <div class="mkp-tabs">
-      <button class="mkp-tab on" id="mkpTabSexo" onclick="setKpiDim('sexo')">Sexo</button>
-      <button class="mkp-tab" id="mkpTabEtario" onclick="setKpiDim('etario')">Grupo etario</button>
     </div>
     <div class="mkp-chips" id="mkpChips"></div>
     <div class="mkp-kpi"><b id="mkpVal">—</b><span id="mkpSub">—</span></div>
