@@ -479,6 +479,29 @@ a.pnl-a:hover{color:#fff;border-bottom-color:#fff}
 .dos-badge.dos-auto{background:#EAF7EE;color:#166534;border:1px solid #BFE3C8}
 .dos-badge.dos-pen{background:var(--surface2);color:var(--text3);border:1px solid var(--line)}
 
+
+/* ── FILTRO KPI DEL MAPA (sexo / grupo etario) ── */
+.map-kpi-btn{position:absolute;right:16px;top:58px;z-index:8;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.93);backdrop-filter:blur(8px);border:1px solid var(--line);box-shadow:var(--sh-sm);display:flex;align-items:center;justify-content:center;color:var(--text2);transition:all .13s}
+.map-kpi-btn:hover{color:var(--brand);border-color:var(--brand);transform:scale(1.05)}
+.map-kpi-btn.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+.map-kpi-panel{position:absolute;right:16px;top:100px;z-index:9;width:266px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-lg);display:none;flex-direction:column;overflow:hidden}
+.map-kpi-panel.open{display:flex}
+.mkp-head{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border-bottom:1px solid var(--line)}
+.mkp-title{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text2)}
+.mkp-close{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--text3)}
+.mkp-close:hover{background:var(--surface2);color:var(--text)}
+.mkp-tabs{display:flex;gap:4px;padding:10px 13px 0}
+.mkp-tab{flex:1;height:29px;border-radius:8px;font-size:11px;font-weight:600;color:var(--text2);background:var(--surface2);display:flex;align-items:center;justify-content:center;transition:all .13s}
+.mkp-tab.on{background:var(--brand);color:#fff}
+.mkp-tab:disabled{opacity:.4;cursor:not-allowed}
+.mkp-chips{display:flex;flex-wrap:wrap;gap:5px;padding:10px 13px 2px}
+.mkp-chip{height:25px;padding:0 10px;border-radius:999px;border:1px solid var(--line2);font-size:11px;font-weight:500;color:var(--text2);background:var(--surface)}
+.mkp-chip.on{background:var(--brand-soft);border-color:var(--brand);color:var(--brand);font-weight:700}
+.mkp-kpi{padding:8px 13px 2px;text-align:center}
+.mkp-kpi b{display:block;font-size:23px;font-weight:800;letter-spacing:-.02em;color:var(--text)}
+.mkp-kpi span{font-size:10.5px;color:var(--text3)}
+.mkp-chart{padding:4px 13px 8px;height:112px}
+.mkp-note{padding:0 13px 12px;font-size:10px;color:var(--text3);line-height:1.4}
 </style>
 </head>
 <body>
@@ -2601,6 +2624,23 @@ a.pnl-a:hover{color:#fff;border-bottom-color:#fff}
 <g id="pinsLayer"></g>
 </g></svg>
 
+  <div class="map-kpi-btn" id="mkpBtn" title="Filtros KPI" onclick="toggleKpiPanel()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+  </div>
+  <div class="map-kpi-panel" id="mkpPanel">
+    <div class="mkp-head">
+      <span class="mkp-title">Filtros KPI</span>
+      <div class="mkp-close" onclick="toggleKpiPanel()">✕</div>
+    </div>
+    <div class="mkp-tabs">
+      <button class="mkp-tab on" id="mkpTabSexo" onclick="setKpiDim('sexo')">Sexo</button>
+      <button class="mkp-tab" id="mkpTabEtario" onclick="setKpiDim('etario')">Grupo etario</button>
+    </div>
+    <div class="mkp-chips" id="mkpChips"></div>
+    <div class="mkp-kpi"><b id="mkpVal">—</b><span id="mkpSub">—</span></div>
+    <div class="mkp-chart"><canvas id="mkpChart"></canvas></div>
+    <div class="mkp-note" id="mkpNote"></div>
+  </div>
   <div class="map-pop" id="mapPop"></div>
   <div class="map-zoom">
     <button onclick="mapZoom(1.3)" title="Acercar">+</button>
@@ -4963,6 +5003,117 @@ openPanel=function(sec){
 var __switchL=switchComuna;
 switchComuna=function(cod){__switchL(cod); if(document.getElementById('dosList'))buildDosList();};
 buildDosList();
+/* ═══════════ FILTRO KPI DEL MAPA (sexo · grupo etario) ═══════════ */
+// Grupo etario: única desagregación real disponible es la de Independencia
+// (Censo 2024, ya usada en el módulo Demografía / chEtaria). Las otras 5
+// comunas solo tienen sexo desagregado en FICHAS[cod].bcn.sexo — por eso
+// la pestaña "Grupo etario" queda deshabilitada fuera de Independencia,
+// en vez de estimar un cruce que no está en la fuente.
+const ETARIA_13108 = [
+  {l:'0–14', v:18360}, {l:'15–29', v:25700}, {l:'30–44', v:31600},
+  {l:'45–64', v:26900}, {l:'65+', v:14735},
+];
+
+let mkpDim = 'sexo';      // 'sexo' | 'etario'
+let mkpSel = null;        // índice del chip activo, null = "Todos"
+let mkpChartObj = null;
+
+function toggleKpiPanel(){
+  const p=document.getElementById('mkpPanel'), b=document.getElementById('mkpBtn');
+  const open=!p.classList.contains('open');
+  p.classList.toggle('open',open); b.classList.toggle('active',open);
+  if(open) refreshKpiPanel();
+}
+
+function setKpiDim(dim){
+  if(dim==='etario' && CUR!=='13108') return; // deshabilitado, sin dato real
+  mkpDim=dim; mkpSel=null;
+  document.getElementById('mkpTabSexo').classList.toggle('on', dim==='sexo');
+  document.getElementById('mkpTabEtario').classList.toggle('on', dim==='etario');
+  renderKpiChips(); renderKpiResultado();
+}
+
+function renderKpiChips(){
+  const cont=document.getElementById('mkpChips');
+  const labels = mkpDim==='sexo' ? ['Todos','Mujeres','Hombres'] : ['Todos'].concat(ETARIA_13108.map(e=>e.l));
+  cont.innerHTML = labels.map((l,i)=>
+    '<button class="mkp-chip'+((mkpSel===null&&i===0)||mkpSel===i-1?' on':'')+'" onclick="setKpiSel('+(i-1)+')">'+l+'</button>'
+  ).join('');
+}
+
+function setKpiSel(idx){
+  mkpSel = idx<0 ? null : idx;
+  renderKpiChips(); renderKpiResultado();
+}
+
+function renderKpiResultado(){
+  const F=FICHAS[CUR]; if(!F) return;
+  const etarioDisponible = CUR==='13108';
+  document.getElementById('mkpTabEtario').disabled = !etarioDisponible;
+  const totalPob = parseInt((F.bcn.censo.p2024||'0').replace(/\./g,''),10);
+  let val, sub, chartData;
+
+  if(mkpDim==='sexo'){
+    const h=parseInt(F.bcn.sexo.h2024.replace(/\./g,''),10);
+    const m=parseInt(F.bcn.sexo.m2024.replace(/\./g,''),10);
+    if(mkpSel===null){ val=fmt(totalPob); sub='Población total · '+F.nombre; }
+    else if(mkpSel===0){ val=fmt(m); sub='Mujeres · '+(totalPob?(m/totalPob*100).toFixed(1):'—')+'% del total'; }
+    else { val=fmt(h); sub='Hombres · '+(totalPob?(h/totalPob*100).toFixed(1):'—')+'% del total'; }
+    chartData={type:'doughnut',labels:['Mujeres','Hombres'],data:[m,h],
+      colors:[mkpSel===1?'#CBD4E1':C_KPI.gold, mkpSel===0?'#CBD4E1':C_KPI.n3]};
+  } else {
+    const tot = ETARIA_13108.reduce((a,e)=>a+e.v,0);
+    if(mkpSel===null){ val=fmt(tot); sub='Población estimada · '+F.nombre; }
+    else { const e=ETARIA_13108[mkpSel]; val=fmt(e.v); sub=e.l+' años · '+(e.v/tot*100).toFixed(1)+'% del total'; }
+    chartData={type:'bar',labels:ETARIA_13108.map(e=>e.l),data:ETARIA_13108.map(e=>e.v),
+      colors:ETARIA_13108.map((e,i)=> mkpSel===null||mkpSel===i ? C_KPI.gold : '#E3E8F0')};
+  }
+
+  document.getElementById('mkpVal').textContent = val;
+  document.getElementById('mkpSub').textContent = sub;
+  document.getElementById('mkpNote').textContent = mkpDim==='sexo'
+    ? 'Fuente: BCN Reporte Comunal 2024 (Censo INE).'
+    : (etarioDisponible ? 'Fuente: Censo 2024 INE, estimación por tramo.' : 'Grupo etario: dato aún no levantado para esta comuna — disponible en Independencia.');
+
+  drawKpiChart(chartData);
+}
+
+const C_KPI = {gold:'#E8AE3C', n3:'#8593AB', brand:'#2952E3'};
+
+function drawKpiChart(cfg){
+  if(mkpChartObj){ mkpChartObj.destroy(); mkpChartObj=null; }
+  const ctx=document.getElementById('mkpChart'); if(!ctx) return;
+  if(cfg.type==='doughnut'){
+    mkpChartObj = new Chart(ctx,{type:'doughnut',data:{labels:cfg.labels,
+      datasets:[{data:cfg.data,backgroundColor:cfg.colors,borderWidth:2,borderColor:'#fff'}]},
+      options:{responsive:true,maintainAspectRatio:false,cutout:'62%',
+        plugins:{legend:{display:true,position:'bottom',labels:{color:'#3E4C66',boxWidth:9,boxHeight:9,font:{size:10}}},
+          tooltip:{callbacks:{label:c=>c.label+': '+fmt(c.raw)}}}}});
+  } else {
+    mkpChartObj = new Chart(ctx,{type:'bar',data:{labels:cfg.labels,
+      datasets:[{data:cfg.data,backgroundColor:cfg.colors,borderRadius:4,maxBarThickness:22}]},
+      options:{responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>fmt(c.raw)+' hab.'}}},
+        scales:{x:{grid:{display:false},ticks:{color:'#8593AB',font:{size:9}}},
+          y:{display:false,grid:{display:false}}}}});
+  }
+}
+
+function refreshKpiPanel(){
+  if(CUR!=='13108' && mkpDim==='etario'){ mkpDim='sexo'; mkpSel=null;
+    document.getElementById('mkpTabSexo').classList.add('on');
+    document.getElementById('mkpTabEtario').classList.remove('on');
+  }
+  renderKpiChips(); renderKpiResultado();
+}
+
+// Se engancha a switchComuna (ya definida arriba) sin modificarla: al
+// cambiar de comuna, si el panel está abierto, se refresca solo.
+const __switchComunaKpiHook = switchComuna;
+switchComuna = function(cod){
+  __switchComunaKpiHook(cod);
+  if(document.getElementById('mkpPanel').classList.contains('open')) refreshKpiPanel();
+};
 </script>
 </body>
 </html>
