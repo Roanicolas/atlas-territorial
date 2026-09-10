@@ -44,6 +44,7 @@ parts.append(read("js/14b-multicomuna.js"))
 parts.append(read("js/15-ficha-comunal.js"))
 parts.append(read("js/16-terreno-pro.js"))
 parts.append(read("js/17-modulos-todas-comunas.js"))
+parts.append(read("js/18-filtro-kpi-mapa.js"))
 parts.append("</script>\n</body>\n</html>\n")
 
 with open(OUT, "w", encoding="utf-8") as f:
